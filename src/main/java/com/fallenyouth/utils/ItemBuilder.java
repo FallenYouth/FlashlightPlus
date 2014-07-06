@@ -1,4 +1,4 @@
-package com.FallenYouth.utils;
+package com.fallenyouth.utils;
 
 import lombok.Data;
 import org.bukkit.Color;

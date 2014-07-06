@@ -1,0 +1,6 @@
+Messages:
+  Prefix: "&5[FlashlightPlus] "
+  FlashlightOnMsg: "&2Flashlight has been enabled!"
+  FlashlightOffMsg: "&3Flashlight has been disabled!"
+Backend:
+  Metrics: true

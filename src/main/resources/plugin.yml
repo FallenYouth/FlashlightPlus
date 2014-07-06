@@ -1,0 +1,29 @@
+name: FlashlightPlus
+author: FallenYouth # With the help of CraftThatBlock
+version: 1.0.0
+main: com.fallenyouth.main.FlashlightPlus
+description: Advanced Flashlight plugin for Minecraft
+
+commands:
+  flashlight:
+    description: Toggles Flashlight
+
+permissions:
+  flashlight.use:
+    description: Toggles Flashlight
+    default: op
+  flashlight.use.on:
+    description: Toggles Flashlight
+    default: op
+  flashlight.use.off:
+    description: Toggles Flashlight
+    default: op
+  flashlight.use.spawn:
+    description: Toggles Flashlight
+    default: op
+  flashlight.use:
+    description: Toggles Flashlight
+    default: op
+  flashlight.admin.reload:
+    description: Toggles Flashlight
+    default: op

@@ -1,7 +1,7 @@
-package com.FallenYouth.listeners;
+package com.fallenyouth.listeners;
 
-import com.FallenYouth.main.FlashlightPlus;
-import com.FallenYouth.utils.ItemBuilder;
+import com.fallenyouth.main.FlashlightPlus;
+import com.fallenyouth.utils.ItemBuilder;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
 import org.bukkit.Material;
@@ -27,7 +27,6 @@ public class CommandExecute implements CommandExecutor {
     }
 
     @Override
-    @SuppressWarnings("deprecation")
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
             sender.sendMessage("You must be a player to use this command.");

@@ -1,4 +1,4 @@
-package com.FallenYouth.utils;
+package com.fallenyouth.utils;
 /*
  * Copyright 2011-2013 Tyler Blair. All rights reserved.
  *
