@@ -1,7 +1,18 @@
 Messages:
-  Prefix: "&5[FlashlightPlus] "
+  Prefix: "&3[&fFlashlightPlus&3]&r "
   FlashlightOnMsg: "&2Flashlight has been enabled!"
   FlashlightOffMsg: "&3Flashlight has been disabled!"
+  InvCheckMsg: "&cYou already have the flashlight in your inventory!"
+  NoPermMsg: "&cYou do not have permission to use this command!"
+  CooldownMsg: "&cYou can only use this command ever 30 seconds!"
+#All sign text must be less than 15 characters(I think)
+Sign:
+  Line1: "&2[Flashlight]"
+  Line2: "&fClick here"
+  Line3: "&fto use"
+  Line4: ""
+Torch:
+  Name:"&f[&3Flashlight&f]&r"
 Backend:
   Metrics: true
   Cooldown: 30

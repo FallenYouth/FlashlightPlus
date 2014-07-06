@@ -32,22 +32,11 @@ public class EventListener implements Listener {
         Player player = event.getPlayer();
         ItemStack torch = player.getItemInHand();
 
-        if ((event.getAction() == Action.RIGHT_CLICK_AIR || (event.getAction() == Action.LEFT_CLICK_AIR))) {
-            if (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]" + ChatColor.RESET)) {
-                FlashlightPlus.togglePlayer(player);
-            }
-        }
-    }
-
-    @EventHandler
-    public void onPlace(PlayerInteractEvent event) {
-        Player player = event.getPlayer();
-        ItemStack torch = player.getItemInHand();
-        if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
-            if (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]" + ChatColor.RESET)) {
-                event.setCancelled(true);
-                player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You cannot place this item!"));
-            }
+        if ((event.getAction() == Action.RIGHT_CLICK_AIR || (event.getAction() == Action.LEFT_CLICK_AIR)) && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]" + ChatColor.RESET))) {
+            FlashlightPlus.togglePlayer(player);
+        } else if ((event.getAction() == Action.RIGHT_CLICK_BLOCK) && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]" + ChatColor.RESET))) {
+            event.setCancelled(true);
+            player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You cannot place this item!"));
         }
     }
 }

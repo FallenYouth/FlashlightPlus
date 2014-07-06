@@ -28,9 +28,10 @@ public class SignListener implements Listener {
 		if (event.getLine(0).equals("[Flashlight]")) {
 			player.sendMessage(FlashlightPlus.getMessage(ChatColor.GREEN + "sign created!"));
 
-			event.setLine(0, ChatColor.GREEN + "[Flashlight]");
-			event.setLine(1, ChatColor.WHITE + "Click here");
-			event.setLine(2, ChatColor.WHITE + "to use");
+			event.setLine(0, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line1")));
+			event.setLine(1, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line2")));
+			event.setLine(2, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line3")));
+            event.setLine(3, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line4")));
 		}
 	}
 
@@ -41,7 +42,7 @@ public class SignListener implements Listener {
 				Sign sign = (Sign) event.getClickedBlock().getState();
 				Player player = event.getPlayer();
 
-				if (sign.getLine(0).equals(ChatColor.GREEN + "[Flashlight]")) {
+				if (sign.getLine(0).equals(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line1")))) {
 					FlashlightPlus.togglePlayer(player);
 				} else {
                     player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You do not have permission to use this sign"));
