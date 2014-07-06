@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FlashlightPlus:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/FlashlightPlus_jar</output-path>
+    <root id="archive" name="FlashlightPlus.jar">
+      <element id="module-output" name="FlashlightPlus" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/spigotmc/spigot-api/1.7.9-R0.2-SNAPSHOT/spigot-api-1.7.9-R0.2-20140530.193812-13.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/spigotmc/spigot/1.7.9-R0.2-SNAPSHOT/spigot-1.7.9-R0.2-20140530.193857-12.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
