@@ -5,6 +5,7 @@ import com.fallenyouth.listeners.EventListener;
 import com.fallenyouth.listeners.SignListener;
 import com.fallenyouth.utils.Metrics;
 import lombok.Getter;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
 import org.bukkit.entity.Player;
@@ -14,6 +15,9 @@ import org.bukkit.potion.PotionEffectType;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * Made by FallenYouth
@@ -26,6 +30,9 @@ public class FlashlightPlus extends JavaPlugin {
 
 	@Getter
 	private static ArrayList<String> flashLightToggle = new ArrayList<String>();
+
+	@Getter
+	private static HashMap<UUID, Integer> cooldown = new HashMap<UUID, Integer>();
 
 	public void onEnable() {
 		plugin = this;
@@ -43,6 +50,19 @@ public class FlashlightPlus extends JavaPlugin {
 				getLogger().warning("FlashlightPlus's stats failed to be sent :(");
 			}
 		}
+
+		Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
+			@Override
+			public void run() {
+				for (Object o : ((HashMap) cooldown.clone()).entrySet()) {
+					Map.Entry pairs = (Map.Entry) o;
+					cooldown.remove(pairs.getKey());
+					if (((int) pairs.getValue()) > 0) {
+						cooldown.put((UUID) pairs.getKey(), ((int) pairs.getValue()) - 1);
+					}
+				}
+			}
+		}, 20, 20);
 	}
 
 	public static String getConfigMessage(String message) {
@@ -66,6 +86,7 @@ public class FlashlightPlus extends JavaPlugin {
 	}
 
 	public static void togglePlayerOn(Player player) {
+		if (addToCooldown(player)) return;
 		player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
 		player.sendMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg")));
 		getFlashLightToggle().add(player.getName());
@@ -73,10 +94,27 @@ public class FlashlightPlus extends JavaPlugin {
 	}
 
 	public static void togglePlayerOff(Player player) {
+		if (addToCooldown(player)) return;
 		player.removePotionEffect(PotionEffectType.NIGHT_VISION);
 		player.sendMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOffMsg")));
 		getFlashLightToggle().remove(player.getName());
 		player.playEffect(player.getLocation(), Effect.EXTINGUISH, 5);
+	}
+
+	public static boolean addToCooldown(Player player) {
+		if (isInCooldown(player)) {
+			player.sendMessage(getMessage("Please wait for the cooldown to expire!"));
+			return true;
+		} else {
+			if (!player.hasPermission("flashlight.bypasscooldown"))
+				cooldown.put(player.getUniqueId(), getPlugin().getConfig().getInt("Cooldown", 30));
+			return false;
+		}
+	}
+
+	public static boolean isInCooldown(Player player) {
+		return cooldown.containsKey(player.getUniqueId());
+
 	}
 }
 

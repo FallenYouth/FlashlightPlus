@@ -1,3 +1,5 @@
+Cooldown: 30
+
 Messages:
   Prefix: "&5[FlashlightPlus] "
   FlashlightOnMsg: "&2Flashlight has been enabled!"

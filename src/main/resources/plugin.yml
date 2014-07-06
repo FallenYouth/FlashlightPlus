@@ -24,6 +24,9 @@ permissions:
   flashlight.use:
     description: Toggles Flashlight
     default: op
+  flashlight.bypasscooldown:
+    description: Allow bypass of the cooldown
+    default: op
   flashlight.admin.reload:
     description: Toggles Flashlight
     default: op
