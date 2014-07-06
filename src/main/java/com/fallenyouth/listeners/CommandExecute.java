@@ -40,7 +40,7 @@ public class CommandExecute implements CommandExecutor {
 
 				ItemStack torch = new ItemBuilder(Material.TORCH)
 						.withName(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]" + ChatColor.RESET)
-						.withLore(ChatColor.GREEN + "Use the torch to light your way!")
+						.withLore(ChatColor.RED + "Usage:").withLores(new String[]{ChatColor.GREEN + "Right/Left click in air"})
 						.withAmount(1)
 						.toItemStack();
                 if (player.getInventory().contains(torch)) {
