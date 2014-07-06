@@ -15,28 +15,39 @@ import org.bukkit.potion.PotionEffectType;
  * Made by FallenYouth
  */
 
-@SuppressWarnings("deprecation")
 public class EventListener implements Listener {
 
-	@EventHandler
-	public void onLeave(PlayerQuitEvent e) {
-		Player player = (Player) e.getPlayer();
+    @EventHandler
+    public void onLeave(PlayerQuitEvent e) {
+        Player player = (Player) e.getPlayer();
 
-		if (FlashlightPlus.getFlashLightToggle().contains(player.getName())) {
-			FlashlightPlus.getFlashLightToggle().remove(player.getName());
-			e.getPlayer().removePotionEffect(PotionEffectType.NIGHT_VISION);
-		}
-	}
+        if (FlashlightPlus.getFlashLightToggle().contains(player.getName())) {
+            FlashlightPlus.getFlashLightToggle().remove(player.getName());
+            e.getPlayer().removePotionEffect(PotionEffectType.NIGHT_VISION);
+        }
+    }
 
-	@EventHandler
-	public void onPlayerInteract(PlayerInteractEvent event) {
-		Player player = event.getPlayer();
-		ItemStack torch = player.getItemInHand();
+    @EventHandler
+    public void onPlayerInteract(PlayerInteractEvent event) {
+        Player player = event.getPlayer();
+        ItemStack torch = player.getItemInHand();
 
-		if ((event.getAction() == Action.RIGHT_CLICK_AIR || (event.getAction() == Action.LEFT_CLICK_AIR))) {
-			if (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]" + ChatColor.RESET)) {
-				FlashlightPlus.togglePlayer(player);
-			}
-		}
-	}
+        if ((event.getAction() == Action.RIGHT_CLICK_AIR || (event.getAction() == Action.LEFT_CLICK_AIR))) {
+            if (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]" + ChatColor.RESET)) {
+                FlashlightPlus.togglePlayer(player);
+            }
+        }
+    }
+
+    @EventHandler
+    public void onPlace(PlayerInteractEvent event) {
+        Player player = event.getPlayer();
+        ItemStack torch = player.getItemInHand();
+        if (event.getAction() == Action.RIGHT_CLICK_BLOCK) {
+            if (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]" + ChatColor.RESET)) {
+                event.setCancelled(true);
+                player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You cannot place this item!"));
+            }
+        }
+    }
 }

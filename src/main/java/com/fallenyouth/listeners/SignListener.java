@@ -14,7 +14,6 @@ import org.bukkit.event.player.PlayerInteractEvent;
  * Made by FallenYouth
  */
 
-@SuppressWarnings("deprecation")
 public class SignListener implements Listener {
 
 	@EventHandler
@@ -22,12 +21,12 @@ public class SignListener implements Listener {
 		Player player = event.getPlayer();
 
 		if (!player.hasPermission("flashlight.admin.sign")) {
-			player.sendMessage(FlashlightPlus.getMessage("&6You don't have permission to make this sign."));
+			player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You don't have permission to make this sign."));
 			event.setLine(0, "Error");
 			return;
 		}
 		if (event.getLine(0).equals("[Flashlight]")) {
-			player.sendMessage(FlashlightPlus.getMessage("&asign created!"));
+			player.sendMessage(FlashlightPlus.getMessage(ChatColor.GREEN + "sign created!"));
 
 			event.setLine(0, ChatColor.GREEN + "[Flashlight]");
 			event.setLine(1, ChatColor.WHITE + "Click here");
@@ -44,7 +43,9 @@ public class SignListener implements Listener {
 
 				if (sign.getLine(0).equals(ChatColor.GREEN + "[Flashlight]")) {
 					FlashlightPlus.togglePlayer(player);
-				}
+				} else {
+                    player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You do not have permission to use this sign"));
+                }
 			}
 		}
 	}
