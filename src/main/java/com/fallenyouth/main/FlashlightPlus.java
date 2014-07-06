@@ -26,7 +26,7 @@ import java.util.UUID;
 public class FlashlightPlus extends JavaPlugin {
 
 	@Getter
-	private static FlashlightPlus plugin;
+    public static FlashlightPlus plugin;
 
 	@Getter
 	private static ArrayList<String> flashLightToggle = new ArrayList<String>();
@@ -35,35 +35,35 @@ public class FlashlightPlus extends JavaPlugin {
 	private static HashMap<UUID, Integer> cooldown = new HashMap<UUID, Integer>();
 
 	public void onEnable() {
-		plugin = this;
-		saveDefaultConfig();
+        plugin = this;
+        saveDefaultConfig();
 
-		getServer().getPluginManager().registerEvents(new EventListener(), this);
-		getServer().getPluginManager().registerEvents(new SignListener(), this);
-		getCommand("flashlight").setExecutor(new CommandExecute());
+        getServer().getPluginManager().registerEvents(new EventListener(), this);
+        getServer().getPluginManager().registerEvents(new SignListener(), this);
+        getCommand("flashlight").setExecutor(new CommandExecute());
 
-		if (getConfig().getBoolean("Backend.Metrics", true)) {
-			try {
-				Metrics metrics = new Metrics(this);
-				metrics.start();
-			} catch (IOException e) {
-				getLogger().warning("FlashlightPlus's stats failed to be sent :(");
-			}
-		}
+        if (getConfig().getBoolean("Backend.Metrics", true)) {
+            try {
+                Metrics metrics = new Metrics(this);
+                metrics.start();
+            } catch (IOException e) {
+                getLogger().warning("FlashlightPlus's stats failed to be sent :(");
+            }
+        }
 
-		Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
-			@Override
-			public void run() {
-				for (Object o : ((HashMap) cooldown.clone()).entrySet()) {
-					Map.Entry pairs = (Map.Entry) o;
-					cooldown.remove(pairs.getKey());
-					if (((int) pairs.getValue()) > 0) {
-						cooldown.put((UUID) pairs.getKey(), ((int) pairs.getValue()) - 1);
-					}
-				}
-			}
-		}, 20, 20);
-	}
+        Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
+            @Override
+            public void run() {
+                for (Object o : ((HashMap) cooldown.clone()).entrySet()) {
+                    Map.Entry pairs = (Map.Entry) o;
+                    cooldown.remove(pairs.getKey());
+                    if (((Integer) pairs.getValue()) > 0) {
+                        cooldown.put((UUID) pairs.getKey(), ((Integer) pairs.getValue()) - 1);
+                    }
+                }
+            }
+        }, 20, 20);
+    }
 
 	public static String getConfigMessage(String message) {
 		return getMessage(getPlugin().getConfig().getConfigurationSection("Messages").getString(message));
@@ -88,7 +88,7 @@ public class FlashlightPlus extends JavaPlugin {
 	public static void togglePlayerOn(Player player) {
 		if (addToCooldown(player)) return;
 		player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
-		player.sendMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg")));
+		player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg"))));
 		getFlashLightToggle().add(player.getName());
 		player.playEffect(player.getLocation(), Effect.GHAST_SHOOT, 5);
 	}
@@ -96,14 +96,14 @@ public class FlashlightPlus extends JavaPlugin {
 	public static void togglePlayerOff(Player player) {
 		if (addToCooldown(player)) return;
 		player.removePotionEffect(PotionEffectType.NIGHT_VISION);
-		player.sendMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOffMsg")));
+        player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOffMsg"))));
 		getFlashLightToggle().remove(player.getName());
 		player.playEffect(player.getLocation(), Effect.EXTINGUISH, 5);
 	}
 
 	public static boolean addToCooldown(Player player) {
 		if (isInCooldown(player)) {
-			player.sendMessage(getMessage("Please wait for the cooldown to expire!"));
+			player.sendMessage(getMessage(ChatColor.RED + "Please wait for the cooldown to expire!"));
 			return true;
 		} else {
 			if (!player.hasPermission("flashlight.bypasscooldown"))

@@ -25,21 +25,27 @@ public class CommandExecute implements CommandExecutor {
 		}
 		Player player = (Player) sender;
 		if (cmd.getName().equalsIgnoreCase("flashlight") && (player.hasPermission("flashlight.use"))) {
-			player.sendMessage(ChatColor.GREEN + "=====================================");
-			player.sendMessage(ChatColor.GOLD + "Usage: /flashlight on/off/spawn/reload" + ChatColor.BLACK + "/ctb");
-			player.sendMessage(ChatColor.GREEN + "=====================================");
-		}
+            if (args.length != 1) {
+                player.sendMessage(ChatColor.GREEN + "=====================================");
+                player.sendMessage(ChatColor.GOLD + "Usage: /flashlight on/off/spawn/reload" + ChatColor.BLACK + "/ctb");
+                player.sendMessage(ChatColor.GREEN + "=====================================");
+            }
+        }
 		if (args.length == 1) {
 			if (args[0].equalsIgnoreCase("on") && player.hasPermission("flashlight.use.on")) {
 				FlashlightPlus.togglePlayerOn(player);
 			} else if (args[0].equalsIgnoreCase("off") && player.hasPermission("flashlight.use.off")) {
-				FlashlightPlus.togglePlayerOn(player);
+				FlashlightPlus.togglePlayerOff(player);
 			} else if (args[0].equalsIgnoreCase("spawn") && player.hasPermission("flashlight.use.spawn")) {
+
 				ItemStack torch = new ItemBuilder(Material.TORCH)
 						.withName(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]" + ChatColor.RESET)
 						.withLore(ChatColor.GREEN + "Use the torch to light your way!")
 						.withAmount(1)
 						.toItemStack();
+                if (player.getInventory().contains(torch)) {
+                    player.sendMessage(FlashlightPlus.getMessage(""));
+                }
 				player.getInventory().addItem(torch);
 			} else if (args[0].equalsIgnoreCase("reload") && player.hasPermission("flashlight.admin.reload")) {
 				FlashlightPlus.getPlugin().reloadConfig();

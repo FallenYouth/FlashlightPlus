@@ -27,9 +27,9 @@ permissions:
   flashlight.bypasscooldown:
     description: Allow bypass of the cooldown
     default: op
-  flashlight.use.torch
+  flashlight.use.torch:
     description: Allow's use of the torch
     default: op
-  flashlight.admin.sign
+  flashlight.admin.sign:
     description: Ability to create FlashlightPlus sign
     default: op
