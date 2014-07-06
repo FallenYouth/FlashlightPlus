@@ -35,7 +35,7 @@ public class CommandExecute implements CommandExecutor {
 			if (args[0].equalsIgnoreCase("on") && player.hasPermission("flashlight.use.on")) {
 				FlashlightPlus.togglePlayerOn(player);
 			} else if (args[0].equalsIgnoreCase("off") && player.hasPermission("flashlight.use.off")) {
-				FlashlightPlus.togglePlayerOff(player);
+                FlashlightPlus.togglePlayerOff(player);
 			} else if (args[0].equalsIgnoreCase("spawn") && player.hasPermission("flashlight.use.spawn")) {
 
 				ItemStack torch = new ItemBuilder(Material.TORCH)

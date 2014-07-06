@@ -86,20 +86,28 @@ public class FlashlightPlus extends JavaPlugin {
 	}
 
 	public static void togglePlayerOn(Player player) {
-		if (addToCooldown(player)) return;
-		player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
-		player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg"))));
-		getFlashLightToggle().add(player.getName());
-		player.playEffect(player.getLocation(), Effect.GHAST_SHOOT, 5);
-	}
+        if (player.hasPermission("flashlight.use.on")) {
+            if (addToCooldown(player)) return;
+            player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
+            player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg"))));
+            getFlashLightToggle().add(player.getName());
+            player.playEffect(player.getLocation(), Effect.GHAST_SHOOT, 5);
+        } else {
+            player.sendMessage(FlashlightPlus.getMessage("You do not have permission to use this command"));
+        }
+    }
 
 	public static void togglePlayerOff(Player player) {
-		if (addToCooldown(player)) return;
-		player.removePotionEffect(PotionEffectType.NIGHT_VISION);
-        player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOffMsg"))));
-		getFlashLightToggle().remove(player.getName());
-		player.playEffect(player.getLocation(), Effect.EXTINGUISH, 5);
-	}
+        if (player.hasPermission("flashlight.use.off")) {
+            if (addToCooldown(player)) return;
+            player.removePotionEffect(PotionEffectType.NIGHT_VISION);
+            player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOffMsg"))));
+            getFlashLightToggle().remove(player.getName());
+            player.playEffect(player.getLocation(), Effect.EXTINGUISH, 5);
+        } else {
+            player.sendMessage(FlashlightPlus.getMessage("You do not have permission to use this command"));
+        }
+    }
 
 	public static boolean addToCooldown(Player player) {
 		if (isInCooldown(player)) {
