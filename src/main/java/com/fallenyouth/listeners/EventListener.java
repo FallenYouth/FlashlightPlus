@@ -17,11 +17,6 @@ import org.bukkit.potion.PotionEffectType;
 
 @SuppressWarnings("deprecation")
 public class EventListener implements Listener {
-	private FlashlightPlus plugin;
-
-	public EventListener(FlashlightPlus plugin) {
-		this.plugin = plugin;
-	}
 
 	@EventHandler
 	public void onLeave(PlayerQuitEvent e) {

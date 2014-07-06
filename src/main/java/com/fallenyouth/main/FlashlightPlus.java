@@ -31,9 +31,9 @@ public class FlashlightPlus extends JavaPlugin {
 		plugin = this;
 		saveDefaultConfig();
 
-		getServer().getPluginManager().registerEvents(new EventListener(this), this);
-		getServer().getPluginManager().registerEvents(new SignListener(this), this);
-		getCommand("flashlight").setExecutor(new CommandExecute(this));
+		getServer().getPluginManager().registerEvents(new EventListener(), this);
+		getServer().getPluginManager().registerEvents(new SignListener(), this);
+		getCommand("flashlight").setExecutor(new CommandExecute());
 
 		if (getConfig().getBoolean("Backend.Metrics", true)) {
 			try {
@@ -45,30 +45,38 @@ public class FlashlightPlus extends JavaPlugin {
 		}
 	}
 
-	public static String getConfigMessage(String message){
+	public static String getConfigMessage(String message) {
 		return getMessage(getPlugin().getConfig().getConfigurationSection("Messages").getString(message));
 	}
 
-	public static String getMessage(String message){
+	public static String getMessage(String message) {
 		return ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getConfigurationSection("Messages").getString("Prefix") + message);
 	}
 
 	public static void togglePlayer(Player player) {
 		if (player.hasPermission("flashlight.torch.use")) {
 			if (!getFlashLightToggle().contains(player.getName())) {
-				player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
-				player.sendMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg")));
-				getFlashLightToggle().add(player.getName());
-				player.playEffect(player.getLocation(), Effect.GHAST_SHOOT, 5);
+				togglePlayerOn(player);
 			} else {
-				player.removePotionEffect(PotionEffectType.NIGHT_VISION);
-				player.sendMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOffMsg")));
-				getFlashLightToggle().remove(player.getName());
-				player.playEffect(player.getLocation(), Effect.EXTINGUISH, 5);
+				togglePlayerOff(player);
 			}
 		} else {
 			player.sendMessage(ChatColor.RED + "You do not have permission to toggle your flashlight.");
 		}
+	}
+
+	public static void togglePlayerOn(Player player) {
+		player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
+		player.sendMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg")));
+		getFlashLightToggle().add(player.getName());
+		player.playEffect(player.getLocation(), Effect.GHAST_SHOOT, 5);
+	}
+
+	public static void togglePlayerOff(Player player) {
+		player.removePotionEffect(PotionEffectType.NIGHT_VISION);
+		player.sendMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOffMsg")));
+		getFlashLightToggle().remove(player.getName());
+		player.playEffect(player.getLocation(), Effect.EXTINGUISH, 5);
 	}
 }
 
