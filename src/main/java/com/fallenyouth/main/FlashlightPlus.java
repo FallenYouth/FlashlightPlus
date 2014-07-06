@@ -107,7 +107,7 @@ public class FlashlightPlus extends JavaPlugin {
 			return true;
 		} else {
 			if (!player.hasPermission("flashlight.bypasscooldown"))
-				cooldown.put(player.getUniqueId(), getPlugin().getConfig().getInt("Cooldown", 30));
+				cooldown.put(player.getUniqueId(), getPlugin().getConfig().getInt("Backend.Cooldown", 30));
 			return false;
 		}
 	}
