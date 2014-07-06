@@ -74,7 +74,7 @@ public class FlashlightPlus extends JavaPlugin {
 	}
 
 	public static void togglePlayer(Player player) {
-		if (player.hasPermission("flashlight.torch.use")) {
+		if (player.hasPermission("flashlight.use.torch")) {
 			if (!getFlashLightToggle().contains(player.getName())) {
 				togglePlayerOn(player);
 			} else {

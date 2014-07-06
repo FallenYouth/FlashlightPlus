@@ -10,23 +10,26 @@ commands:
 
 permissions:
   flashlight.use:
-    description: Toggles Flashlight
+    description: Use of the flashlight
     default: op
   flashlight.use.on:
-    description: Toggles Flashlight
+    description: Turns the flashlight on
     default: op
   flashlight.use.off:
-    description: Toggles Flashlight
+    description: Turns flashlight off
     default: op
   flashlight.use.spawn:
-    description: Toggles Flashlight
+    description: Spawns in Flashlight torch
     default: op
-  flashlight.use:
-    description: Toggles Flashlight
+  flashlight.admin.reload:
+    description: Reload the configuration file
     default: op
   flashlight.bypasscooldown:
     description: Allow bypass of the cooldown
     default: op
-  flashlight.admin.reload:
-    description: Toggles Flashlight
+  flashlight.use.torch
+    description: Allow's use of the torch
+    default: op
+  flashlight.admin.sign
+    description: Ability to create FlashlightPlus sign
     default: op

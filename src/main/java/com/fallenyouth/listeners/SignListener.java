@@ -18,29 +18,29 @@ import org.bukkit.event.player.PlayerInteractEvent;
 public class SignListener implements Listener {
 
 	@EventHandler
-	public void onSignCreate(SignChangeEvent sign) {
-		Player player = sign.getPlayer();
+	public void onSignCreate(SignChangeEvent event) {
+		Player player = event.getPlayer();
 
-		if (!player.hasPermission("flashlight.sign")) {
+		if (!player.hasPermission("flashlight.admin.sign")) {
 			player.sendMessage(FlashlightPlus.getMessage("&6You don't have permission to make this sign."));
-			sign.setLine(0, "Error");
+			event.setLine(0, "Error");
 			return;
 		}
-		if (sign.getLine(0).equals("[Flashlight]")) {
-			player.sendMessage(FlashlightPlus.getMessage("&aFlashlightPlus sign created!"));
+		if (event.getLine(0).equals("[Flashlight]")) {
+			player.sendMessage(FlashlightPlus.getMessage("&asign created!"));
 
-			sign.setLine(0, ChatColor.GREEN + "[Flashlight]");
-			sign.setLine(1, ChatColor.WHITE + "Click here");
-			sign.setLine(2, ChatColor.WHITE + "to use");
+			event.setLine(0, ChatColor.GREEN + "[Flashlight]");
+			event.setLine(1, ChatColor.WHITE + "Click here");
+			event.setLine(2, ChatColor.WHITE + "to use");
 		}
 	}
 
 	@EventHandler
-	public void onPlayerInteract(PlayerInteractEvent e) {
-		if ((e.getAction() == Action.RIGHT_CLICK_BLOCK) || (e.getAction() == Action.LEFT_CLICK_BLOCK)) {
-			if (e.getClickedBlock().getState() instanceof Sign) {
-				Sign sign = (Sign) e.getClickedBlock().getState();
-				Player player = e.getPlayer();
+	public void onPlayerInteract(PlayerInteractEvent event) {
+		if ((event.getAction() == Action.RIGHT_CLICK_BLOCK) || (event.getAction() == Action.LEFT_CLICK_BLOCK)) {
+			if (event.getClickedBlock().getState() instanceof Sign) {
+				Sign sign = (Sign) event.getClickedBlock().getState();
+				Player player = event.getPlayer();
 
 				if (sign.getLine(0).equals(ChatColor.GREEN + "[Flashlight]")) {
 					FlashlightPlus.togglePlayer(player);
