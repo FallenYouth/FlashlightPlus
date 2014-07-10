@@ -78,7 +78,7 @@ public class FlashlightPlus extends JavaPlugin {
             this.saveDefaultConfig();
         } else {
             FileConfiguration config = YamlConfiguration.loadConfiguration(file);
-            if (config.contains("Version") || config.getInt("Backend.Version", version) == version) {
+            if (config.contains("Backend.Version") || config.getInt("Backend.Version", version) == version) {
                 file.delete();
                 File tempfile = new File(this.getDataFolder() + File.separator + "oldconfig.yml");
                 try {

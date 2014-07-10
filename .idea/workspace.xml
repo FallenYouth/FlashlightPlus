@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e33be2cf-5bde-4050-9aa2-895c1e5fd51b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/CommandExecute.java" afterPath="$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/CommandExecute.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java" afterPath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/config.yml" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="f8be1eb1-8d03-4186-bb67-e01b26071a66" name="Failed commit: Default" comment="Changed a lot of stuff." />
@@ -37,8 +35,8 @@
       <file leaf-file-name="FlashlightPlus.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.3023255" vertical-offset="0" max-vertical-offset="2220">
-              <caret line="166" column="1" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.27906978" vertical-offset="660" max-vertical-offset="2220">
+              <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -478,7 +476,11 @@
       <created>1404953119258</created>
       <updated>1404953119258</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Change Log:&#10;Added untested changes">
+      <created>1404954304560</created>
+      <updated>1404954304560</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -927,8 +929,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.3023255" vertical-offset="0" max-vertical-offset="2220">
-          <caret line="166" column="1" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.27906978" vertical-offset="660" max-vertical-offset="2220">
+          <caret line="80" column="41" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
           <folding />
         </state>
       </provider>
