@@ -1,6 +1,6 @@
 package com.fallenyouth.listeners;
 
-import com.fallenyouth.main.FlashlightPlus;
+import com.fallenyouth.FlashlightPlus;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -32,11 +32,8 @@ public class EventListener implements Listener {
         Player player = event.getPlayer();
         ItemStack torch = player.getItemInHand();
 
-        if ((event.getAction() == Action.RIGHT_CLICK_AIR || (event.getAction() == Action.LEFT_CLICK_AIR)) && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]" + ChatColor.RESET))) {
+        if ((event.getAction() == Action.RIGHT_CLICK_AIR || (event.getAction() == Action.LEFT_CLICK_AIR)) && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
             FlashlightPlus.togglePlayer(player);
-        } else if ((event.getAction() == Action.RIGHT_CLICK_BLOCK) && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]" + ChatColor.RESET))) {
-            event.setCancelled(true);
-            player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You cannot place this item!"));
         }
     }
 }

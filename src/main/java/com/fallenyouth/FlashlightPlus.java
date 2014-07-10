@@ -1,4 +1,4 @@
-package com.fallenyouth.main;
+package com.fallenyouth;
 
 import com.fallenyouth.listeners.CommandExecute;
 import com.fallenyouth.listeners.EventListener;

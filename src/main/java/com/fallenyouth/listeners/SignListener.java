@@ -1,6 +1,6 @@
 package com.fallenyouth.listeners;
 
-import com.fallenyouth.main.FlashlightPlus;
+import com.fallenyouth.FlashlightPlus;
 import org.bukkit.ChatColor;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
