@@ -6,7 +6,7 @@ Messages:
   FlashlightOffMsg: "&3Flashlight has been disabled!"
   NoPermMsg: "&cYou do not have permission to use this command!"
   CooldownMsg: "&cYou can only use this command ever 30 seconds!"
-#All sign text must be less than 15 characters(I think)
+#All sign text must be 15 characters or less.
 Sign:
   Line1: "&2[Flashlight]"
   Line2: "&fClick here"

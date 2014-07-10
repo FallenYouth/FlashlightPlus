@@ -11,7 +11,6 @@ import org.bukkit.Effect;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -157,11 +156,5 @@ public class FlashlightPlus extends JavaPlugin {
     public static boolean isInCooldown(Player player) {
         return cooldown.containsKey(player.getUniqueId());
 
-    }
-
-    public static boolean invCheck(Player player, String name) {
-        for (ItemStack item : player.getInventory().getContents())
-            if (item.hasItemMeta() && item.getItemMeta().getDisplayName().equals(name)) return true;
-        return false;
     }
 }
