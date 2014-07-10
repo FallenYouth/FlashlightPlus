@@ -40,9 +40,11 @@ public class FlashlightPlus extends JavaPlugin {
     private static HashMap<UUID, Integer> cooldown = new HashMap<UUID, Integer>();
 
     int version = 1;
+    FileConfiguration config;
 
     public void onEnable() {
         plugin = this;
+        loadConfig();
 
         getServer().getPluginManager().registerEvents(new EventListener(), this);
         getServer().getPluginManager().registerEvents(new SignListener(), this);
@@ -94,15 +96,15 @@ public class FlashlightPlus extends JavaPlugin {
 
         FileConfiguration oldC = YamlConfiguration.loadConfiguration(tempfile);
         this.saveDefaultConfig();
-        this.getConfig().set("Messages.Prefix", oldC.getStringList("Messages.Prefix"));
-        this.getConfig().set("Messages.FlashlightOnMsg", oldC.getStringList("Messages.FlashlightOnMsg"));
-        this.getConfig().set("Messages.FlashlightOffMsg", oldC.getStringList("Messages.FlashlightOffMsg"));
+        this.getConfig().set("Messages.Prefix", oldC.getString("Messages.Prefix"));
+        this.getConfig().set("Messages.FlashlightOnMsg", oldC.getString("Messages.FlashlightOnMsg"));
+        this.getConfig().set("Messages.FlashlightOffMsg", oldC.getString("Messages.FlashlightOffMsg"));
         this.getConfig().set("Messages.NoPermMsg", oldC.getStringList("Messages.NoPermMsg"));
-        this.getConfig().set("Messages.CooldownMsg", oldC.getStringList("Messages.CooldownMsg"));
-        this.getConfig().set("Sign.Line1", oldC.getStringList("Sign.Line1"));
-        this.getConfig().set("Sign.Line2", oldC.getStringList("Sign.Line2"));
-        this.getConfig().set("Sign.Line3", oldC.getStringList("Sign.Line3"));
-        this.getConfig().set("Sign.Line4", oldC.getStringList("Sign.Line4"));
+        this.getConfig().set("Messages.CooldownMsg", oldC.getString("Messages.CooldownMsg"));
+        this.getConfig().set("Sign.Line1", oldC.getString("Sign.Line1"));
+        this.getConfig().set("Sign.Line2", oldC.getString("Sign.Line2"));
+        this.getConfig().set("Sign.Line3", oldC.getString("Sign.Line3"));
+        this.getConfig().set("Sign.Line4", oldC.getString("Sign.Line4"));
         this.getConfig().set("Backend.Metrics", oldC.getBoolean("Backend.Metrics"));
         this.getConfig().set("Backend.Cooldown", oldC.getInt("Backend.Cooldown"));
         this.saveConfig();
