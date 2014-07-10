@@ -49,8 +49,6 @@ public class CommandExecute implements CommandExecutor {
         } else if (args[0].equalsIgnoreCase("ctb")) {
             player.sendMessage(ChatColor.GOLD + "This plugin is using a ItemBuilder class by CraftThatBlock");
             player.sendMessage(ChatColor.GOLD + "~Craft~is~boss~ < vouch");
-        } else if (args[0].equalsIgnoreCase("FallenYouth")) {
-            player.sendMessage("I have you all");
         } else {
             player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Messages.NoPermMsg"))));
         }
