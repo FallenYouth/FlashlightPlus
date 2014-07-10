@@ -25,10 +25,10 @@ permissions:
     description: Reload the configuration file
     default: op
   flashlight.bypasscooldown:
-    description: Allow bypass of the cooldown
+    description: Allow bypass of the cool down
     default: op
   flashlight.use.torch:
-    description: Allow's use of the torch
+    description: Allows use of the torch
     default: op
   flashlight.admin.sign:
     description: Ability to create FlashlightPlus sign
