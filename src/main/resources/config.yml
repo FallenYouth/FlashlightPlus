@@ -11,5 +11,7 @@ Sign:
   Line3: "&fto use"
   Line4: ""
 Backend:
+  Version: 1
   Metrics: true
   Cooldown: 30
+

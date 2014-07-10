@@ -8,12 +8,15 @@ import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,6 +38,8 @@ public class FlashlightPlus extends JavaPlugin {
 
     @Getter
     private static HashMap<UUID, Integer> cooldown = new HashMap<UUID, Integer>();
+
+    int version = 1;
 
     public void onEnable() {
         plugin = this;
@@ -66,7 +71,25 @@ public class FlashlightPlus extends JavaPlugin {
             }
         }, 20, 20);
     }
+    public void loadConfig() {
+        File file = new File(this.getDataFolder() + File.separator + "config.yml");
 
+        if (!file.exists()) {
+            this.saveDefaultConfig();
+        } else {
+            FileConfiguration config = YamlConfiguration.loadConfiguration(file);
+            if (config.contains("Version") || config.getInt("Backend.Version", version) == version) {
+                file.delete();
+                File tempfile = new File(this.getDataFolder() + File.separator + "oldconfig.yml");
+                try {
+                    config.save(tempfile);
+                } catch (IOException e) {
+                    getLogger().warning("FlashlightPlus has an Error, please report to FallenYouth");
+                }
+                updateConfig();
+            }
+        }
+    }
     public static String getConfigMessage(String message) {
         return getMessage(getPlugin().getConfig().getConfigurationSection("Messages").getString(message));
     }
@@ -121,5 +144,24 @@ public class FlashlightPlus extends JavaPlugin {
         for (ItemStack item : player.getInventory().getContents())
             if (item.hasItemMeta() && item.getItemMeta().getDisplayName().equals(name)) return true;
         return false;
+    }
+
+    private void updateConfig() {
+        File tempfile = new File(this.getDataFolder() + File.separator + "oldconfig.yml");
+
+        FileConfiguration oldC = YamlConfiguration.loadConfiguration(tempfile);
+        this.saveDefaultConfig();
+        this.getConfig().set("Messages.Prefix", oldC.getStringList("Messages.Prefix"));
+        this.getConfig().set("Messages.FlashlightOnMsg", oldC.getStringList("Messages.FlashlightOnMsg"));
+        this.getConfig().set("Messages.FlashlightOffMsg", oldC.getStringList("Messages.FlashlightOffMsg"));
+        this.getConfig().set("Messages.NoPermMsg", oldC.getStringList("Messages.NoPermMsg"));
+        this.getConfig().set("Messages.CooldownMsg", oldC.getStringList("Messages.CooldownMsg"));
+        this.getConfig().set("Sign.Line1", oldC.getStringList("Sign.Line1"));
+        this.getConfig().set("Sign.Line2", oldC.getStringList("Sign.Line2"));
+        this.getConfig().set("Sign.Line3", oldC.getStringList("Sign.Line3"));
+        this.getConfig().set("Sign.Line4", oldC.getStringList("Sign.Line4"));
+        this.getConfig().set("Backend.Metrics", oldC.getBoolean("Backend.Metrics"));
+        this.getConfig().set("Backend.Cooldown", oldC.getInt("Backend.Cooldown"));
+        this.saveConfig();
     }
 }
