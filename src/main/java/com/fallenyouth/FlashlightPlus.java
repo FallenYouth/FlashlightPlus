@@ -43,7 +43,6 @@ public class FlashlightPlus extends JavaPlugin {
 
     public void onEnable() {
         plugin = this;
-        saveDefaultConfig();
 
         getServer().getPluginManager().registerEvents(new EventListener(), this);
         getServer().getPluginManager().registerEvents(new SignListener(), this);

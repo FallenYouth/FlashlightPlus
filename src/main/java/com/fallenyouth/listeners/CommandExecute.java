@@ -42,15 +42,15 @@ public class CommandExecute implements CommandExecutor {
                         .withAmount(1)
                         .toItemStack();
                 player.getInventory().addItem(flashlight);
+            } else if (args[0].equalsIgnoreCase("reload") && player.hasPermission("flashlight.admin.reload")) {
+                FlashlightPlus.getPlugin().reloadConfig();
+                sender.sendMessage(FlashlightPlus.getMessage("&aConfiguration file reloaded."));
+            } else if (args[0].equalsIgnoreCase("ctb")) {
+                player.sendMessage(ChatColor.GOLD + "This plugin is using a ItemBuilder class by CraftThatBlock");
+                player.sendMessage(ChatColor.GOLD + "~Craft~is~boss~ < vouch");
+            } else {
+                player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Messages.NoPermMsg"))));
             }
-        } else if (args[0].equalsIgnoreCase("reload") && player.hasPermission("flashlight.admin.reload")) {
-            FlashlightPlus.getPlugin().reloadConfig();
-            sender.sendMessage(FlashlightPlus.getMessage("&aConfiguration file reloaded."));
-        } else if (args[0].equalsIgnoreCase("ctb")) {
-            player.sendMessage(ChatColor.GOLD + "This plugin is using a ItemBuilder class by CraftThatBlock");
-            player.sendMessage(ChatColor.GOLD + "~Craft~is~boss~ < vouch");
-        } else {
-            player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Messages.NoPermMsg"))));
         }
         return true;
     }

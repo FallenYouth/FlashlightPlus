@@ -33,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FlashlightPlus.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FlashlightPlus.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32304037" vertical-offset="1139" max-vertical-offset="2205">
-              <caret line="109" column="5" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="2190">
+              <caret line="92" column="16" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -53,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandExecute.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CommandExecute.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/CommandExecute.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="810">
-              <caret line="50" column="75" selection-start-line="50" selection-start-column="75" selection-end-line="50" selection-end-column="75" />
+            <state vertical-scroll-proportion="1.567696" vertical-offset="0" max-vertical-offset="810">
+              <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -87,8 +87,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/CommandExecute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/CommandExecute.java" />
       </list>
     </option>
   </component>
@@ -496,7 +496,11 @@
       <created>1404954492862</created>
       <updated>1404954492862</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Change Log:&#10;Added untested changes">
+      <created>1404955293491</created>
+      <updated>1404955293491</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -927,18 +931,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/CommandExecute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="810">
-          <caret line="50" column="75" selection-start-line="50" selection-start-column="75" selection-end-line="50" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="2190">
+          <caret line="92" column="16" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/CommandExecute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32304037" vertical-offset="1139" max-vertical-offset="2205">
-          <caret line="109" column="5" selection-start-line="109" selection-start-column="5" selection-end-line="109" selection-end-column="5" />
+        <state vertical-scroll-proportion="1.567696" vertical-offset="0" max-vertical-offset="810">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
           <folding />
         </state>
       </provider>
