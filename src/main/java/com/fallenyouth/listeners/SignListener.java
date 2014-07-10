@@ -22,7 +22,7 @@ public class SignListener implements Listener {
 
 		if (!player.hasPermission("flashlight.admin.sign")) {
 			player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You don't have permission to make this sign."));
-			event.setLine(0, "Error");
+			event.setLine(0, ChatColor.RED + "Error");
 			return;
 		}
 		if (event.getLine(0).equals("[Flashlight]")) {

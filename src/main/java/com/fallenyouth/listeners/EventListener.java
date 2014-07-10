@@ -6,8 +6,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
@@ -33,26 +31,28 @@ public class EventListener implements Listener {
     public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         ItemStack torch = player.getItemInHand();
-
         if ((event.getAction() == Action.RIGHT_CLICK_AIR || (event.getAction() == Action.LEFT_CLICK_AIR)) && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
             FlashlightPlus.togglePlayer(player);
         }
     }
     @EventHandler
-    public void onPlace(BlockPlaceEvent event) {
+    public void onPlace(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         ItemStack torch = player.getItemInHand();
-        if (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")) {
+        if (FlashlightPlus.addToCooldown(player)) return;
+        if (event.getAction() == Action.RIGHT_CLICK_BLOCK && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
             player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You are not allowed to place this block!"));
             event.setCancelled(true);
         }
     }
     @EventHandler
-    public void onBreak(BlockBreakEvent event) {
+    public void onBreak(PlayerInteractEvent event) {
         Player player = event.getPlayer();
-
-        if (event.getBlock().getType().name().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")) {
-            event.getBlock().getDrops();
+        ItemStack torch  = player.getItemInHand();
+        if (FlashlightPlus.addToCooldown(player)) return;
+        if (event.getAction() == Action.RIGHT_CLICK_BLOCK && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
+            event.getClickedBlock().getDrops();
+            player.sendMessage(FlashlightPlus.getMessage(ChatColor.GRAY + "Om nom, I ate your flashlight!"));
         }
     }
 }
