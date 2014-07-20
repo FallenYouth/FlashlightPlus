@@ -2,6 +2,7 @@ package com.fallenyouth.listeners;
 
 import com.fallenyouth.FlashlightPlus;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -31,10 +32,11 @@ public class EventListener implements Listener {
     public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         ItemStack torch = player.getItemInHand();
-        if ((event.getAction() == Action.RIGHT_CLICK_AIR || (event.getAction() == Action.LEFT_CLICK_AIR)) && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
+        if ((event.getAction() == Action.RIGHT_CLICK_AIR) && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
             FlashlightPlus.togglePlayer(player);
         }
     }
+
     @EventHandler
     public void onPlace(PlayerInteractEvent event) {
         Player player = event.getPlayer();
@@ -45,14 +47,22 @@ public class EventListener implements Listener {
             event.setCancelled(true);
         }
     }
+
     @EventHandler
     public void onBreak(PlayerInteractEvent event) {
         Player player = event.getPlayer();
-        ItemStack torch  = player.getItemInHand();
+        ItemStack torch = player.getItemInHand();
         if (FlashlightPlus.addToCooldown(player)) return;
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
             event.getClickedBlock().getDrops();
             player.sendMessage(FlashlightPlus.getMessage(ChatColor.GRAY + "Om nom, I ate your flashlight!"));
+        }
+    }
+
+    @EventHandler
+    public void onClick(PlayerInteractEvent event) {
+        if (event.getClickedBlock().getType().equals(Material.STONE_BUTTON) || (event.getClickedBlock().getType().equals(Material.WOOD_BUTTON))) {
+            //Do Stuff
         }
     }
 }
