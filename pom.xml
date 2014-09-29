@@ -12,6 +12,11 @@
             <id>spigot-repo</id>
             <url>http://repo.md-5.net/content/groups/public/</url>
         </repository>
+
+        <repository>
+            <id>bukkit-repo</id>
+            <url>http://repo.bukkit.org/content/groups/public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -34,6 +39,17 @@
             <artifactId>lombok</artifactId>
             <version>1.14.2</version>
             <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>bukkit</artifactId>
+            <version>LATEST</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bukkit</groupId>
+            <artifactId>craftbukkit</artifactId>
+            <version>1.7.10-R0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

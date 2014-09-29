@@ -14,6 +14,7 @@
     <orderEntry type="library" name="Maven: org.spigotmc:spigot-api:1.7.9-R0.2-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: org.spigotmc:spigot:1.7.9-R0.2-SNAPSHOT" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.14.2" level="project" />
+    <orderEntry type="library" name="ProtocolLib-3.4.0" level="project" />
   </component>
 </module>
 

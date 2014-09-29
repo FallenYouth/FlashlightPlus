@@ -115,6 +115,9 @@ public class FlashlightPlus extends JavaPlugin {
     public static String getMessage(String message) {
         return ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getConfigurationSection("Messages").getString("Prefix") + message);
     }
+    public static String Flashlightname(String message) {
+        return ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.Prefix"));
+    }
 
     public static void togglePlayer(Player player) {
         if (player.hasPermission("flashlight.use.torch")) {
