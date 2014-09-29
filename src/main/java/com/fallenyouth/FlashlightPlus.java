@@ -3,7 +3,6 @@ package com.fallenyouth;
 import com.fallenyouth.listeners.CommandExecute;
 import com.fallenyouth.listeners.EventListener;
 import com.fallenyouth.listeners.SignListener;
-import com.fallenyouth.utils.Metrics;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -48,15 +47,6 @@ public class FlashlightPlus extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EventListener(), this);
         getServer().getPluginManager().registerEvents(new SignListener(), this);
         getCommand("flashlight").setExecutor(new CommandExecute());
-
-        if (getConfig().getBoolean("Backend.Metrics", true)) {
-            try {
-                Metrics metrics = new Metrics(this);
-                metrics.start();
-            } catch (IOException e) {
-                getLogger().warning("FlashlightPlus's stats failed to be sent :(");
-            }
-        }
 
         Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
             @Override
@@ -114,9 +104,6 @@ public class FlashlightPlus extends JavaPlugin {
 
     public static String getMessage(String message) {
         return ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getConfigurationSection("Messages").getString("Prefix") + message);
-    }
-    public static String Flashlightname(String message) {
-        return ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.Prefix"));
     }
 
     public static void togglePlayer(Player player) {
