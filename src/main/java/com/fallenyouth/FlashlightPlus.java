@@ -1,6 +1,5 @@
 package com.fallenyouth;
 
-import com.comphenix.protocol.ProtocolManager;
 import com.fallenyouth.listeners.CommandExecute;
 import com.fallenyouth.listeners.EventListener;
 import com.fallenyouth.listeners.SignListener;
@@ -38,12 +37,8 @@ public class FlashlightPlus extends JavaPlugin {
     @Getter
     private static HashMap<UUID, Integer> cooldown = new HashMap<UUID, Integer>();
 
-    private ProtocolManager protocolManager;
-
     int version = 1;
     FileConfiguration config;
-
-
 
     public void onEnable() {
         plugin = this;
@@ -100,7 +95,6 @@ public class FlashlightPlus extends JavaPlugin {
         this.getConfig().set("Sign.Line2", oldC.getString("Sign.Line2"));
         this.getConfig().set("Sign.Line3", oldC.getString("Sign.Line3"));
         this.getConfig().set("Sign.Line4", oldC.getString("Sign.Line4"));
-        this.getConfig().set("Backend.Metrics", oldC.getBoolean("Backend.Metrics"));
         this.getConfig().set("Backend.Cooldown", oldC.getInt("Backend.Cooldown"));
         this.saveConfig();
     }
@@ -123,12 +117,12 @@ public class FlashlightPlus extends JavaPlugin {
     }
 
     public static void togglePlayerOn(Player player) {
-        if (addToCooldown(player)) return;
-        player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
-        player.sendMessage(getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg"))));
-        getFlashLightToggle().add(player.getName());
-        player.playEffect(player.getLocation(), Effect.CLICK1, 5);
-    }
+            if (addToCooldown(player)) return;
+            player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
+            player.sendMessage(getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg"))));
+            getFlashLightToggle().add(player.getName());
+            player.playEffect(player.getLocation(), Effect.CLICK1, 5);
+        }
 
     public static void togglePlayerOff(Player player) {
         if (addToCooldown(player)) return;
@@ -151,6 +145,5 @@ public class FlashlightPlus extends JavaPlugin {
 
     public static boolean isInCooldown(Player player) {
         return cooldown.containsKey(player.getUniqueId());
-
     }
 }

@@ -7,8 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e33be2cf-5bde-4050-9aa2-895c1e5fd51b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/EventListener.java" afterPath="$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/EventListener.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_bukkit_LATEST.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_bukkit_craftbukkit_1_7_10_R0_1_SNAPSHOT.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Vault_1_4_1.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FlashlightPlus.iml" afterPath="$PROJECT_DIR$/FlashlightPlus.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java" afterPath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="f8be1eb1-8d03-4186-bb67-e01b26071a66" name="Failed commit: Default" comment="Changed a lot of stuff." />
@@ -33,12 +38,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FlashlightPlus.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FlashlightPlus.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6972477" vertical-offset="1525" max-vertical-offset="2070">
-              <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1889" max-vertical-offset="2310">
+              <caret line="124" column="9" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1510#1980#0" expanded="true" />
+                <element signature="e#1969#1970#0" expanded="true" />
+                <element signature="e#6146#6147#0" expanded="true" />
+                <element signature="e#6211#6212#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -46,18 +57,8 @@
       <file leaf-file-name="CommandExecute.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/CommandExecute.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="810">
+            <state vertical-scroll-proportion="0.0" vertical-offset="389" max-vertical-offset="810">
               <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventListener.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/EventListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="705">
-              <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -66,8 +67,8 @@
       <file leaf-file-name="plugin.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="615">
+              <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -76,8 +77,18 @@
       <file leaf-file-name="config.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+              <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventListener.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/EventListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.28503564" vertical-offset="255" max-vertical-offset="705">
+              <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -102,18 +113,18 @@
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/main/FlashlightPlus.java" />
         <option value="$PROJECT_DIR$/src/main/resources/lang.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/SignListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/CommandExecute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/utils/LightSource.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/Runnable.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/utils/lol.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/utils/test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/EventListener.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/config.yml" />
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java" />
       </list>
     </option>
   </component>
@@ -330,7 +341,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../External Jar's/ProtocolLib-3.4.0.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../External Jar's/Vault-1.4.1.jar!/" />
     <property name="options.lastSelected" value="project.scopes" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -604,7 +615,15 @@
       <created>1411966831989</created>
       <updated>1411966831989</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Change Log:&#10;Fixed onBlockPlace Event Error.">
+      <created>1412211834585</created>
+      <updated>1412211834585</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Change Log:&#10;Removed Metrics.">
+      <created>1412213129679</created>
+      <updated>1412213129679</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -618,12 +637,13 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14452554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14452554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32554746" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298611" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -638,7 +658,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32554746" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39854014" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -694,7 +713,9 @@
     <MESSAGE value="Change Log:&#10;Plugin now automaticly makes new Config options." />
     <MESSAGE value="Change Log:&#10;Fixed bug for unlimited torches. - untested" />
     <MESSAGE value="Change Log:&#10;Made some changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Log:&#10;Made some changes." />
+    <MESSAGE value="Change Log:&#10;Fixed onBlockPlace Event Error." />
+    <MESSAGE value="Change Log:&#10;Removed Metrics." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Log:&#10;Removed Metrics." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -710,7 +731,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1781" max-vertical-offset="2325">
           <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1510#1980#0" expanded="true" />
+            <element signature="e#1969#1970#0" expanded="true" />
+            <element signature="e#6146#6147#0" expanded="true" />
+            <element signature="e#6211#6212#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1019,21 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FlashlightPlus.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="636">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5890411" vertical-offset="393" max-vertical-offset="1050">
-          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/SignListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
@@ -1042,17 +1054,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
+    <entry file="file://$PROJECT_DIR$/FlashlightPlus.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="390">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5391705" vertical-offset="291" max-vertical-offset="1140">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1889" max-vertical-offset="2310">
+          <caret line="124" column="9" selection-start-line="124" selection-start-column="9" selection-end-line="124" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1510#1980#0" expanded="true" />
+            <element signature="e#1969#1970#0" expanded="true" />
+            <element signature="e#6146#6147#0" expanded="true" />
+            <element signature="e#6211#6212#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/CommandExecute.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="810">
+        <state vertical-scroll-proportion="0.0" vertical-offset="314" max-vertical-offset="810">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
@@ -1061,23 +1095,23 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="7" column="65" selection-start-line="7" selection-start-column="65" selection-end-line="7" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/listeners/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="705">
-          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6972477" vertical-offset="1525" max-vertical-offset="2070">
-          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.28503564" vertical-offset="255" max-vertical-offset="705">
+          <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1159,7 +1193,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>ProtocolLib-3.4.0</last-edited>
+          <last-edited>Vault-1.4.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
