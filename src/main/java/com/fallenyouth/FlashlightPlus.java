@@ -1,5 +1,6 @@
 package com.fallenyouth;
 
+import com.comphenix.protocol.ProtocolManager;
 import com.fallenyouth.listeners.CommandExecute;
 import com.fallenyouth.listeners.EventListener;
 import com.fallenyouth.listeners.SignListener;
@@ -37,8 +38,12 @@ public class FlashlightPlus extends JavaPlugin {
     @Getter
     private static HashMap<UUID, Integer> cooldown = new HashMap<UUID, Integer>();
 
+    private ProtocolManager protocolManager;
+
     int version = 1;
     FileConfiguration config;
+
+
 
     public void onEnable() {
         plugin = this;
@@ -61,6 +66,7 @@ public class FlashlightPlus extends JavaPlugin {
             }
         }, 20, 20);
     }
+
     public void loadConfig() {
         File file = new File(this.getDataFolder() + File.separator + "config.yml");
 
@@ -121,7 +127,7 @@ public class FlashlightPlus extends JavaPlugin {
         player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
         player.sendMessage(getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg"))));
         getFlashLightToggle().add(player.getName());
-        player.playEffect(player.getLocation(), Effect.GHAST_SHOOT, 5);
+        player.playEffect(player.getLocation(), Effect.CLICK1, 5);
     }
 
     public static void togglePlayerOff(Player player) {
@@ -129,7 +135,7 @@ public class FlashlightPlus extends JavaPlugin {
         player.removePotionEffect(PotionEffectType.NIGHT_VISION);
         player.sendMessage(getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOffMsg"))));
         getFlashLightToggle().remove(player.getName());
-        player.playEffect(player.getLocation(), Effect.EXTINGUISH, 5);
+        player.playEffect(player.getLocation(), Effect.CLICK2, 5);
     }
 
     public static boolean addToCooldown(Player player) {

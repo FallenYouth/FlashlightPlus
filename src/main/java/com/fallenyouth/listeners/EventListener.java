@@ -2,10 +2,13 @@ package com.fallenyouth.listeners;
 
 import com.fallenyouth.FlashlightPlus;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
@@ -37,11 +40,12 @@ public class EventListener implements Listener {
     }
 
     @EventHandler
-    public void onPlace(PlayerInteractEvent event) {
+    public void onBlockPlace(BlockPlaceEvent event) {
+        Block block = event.getBlock();
         Player player = event.getPlayer();
         ItemStack torch = player.getItemInHand();
         if (FlashlightPlus.addToCooldown(player)) return;
-        if (event.getAction() == Action.RIGHT_CLICK_BLOCK && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
+        if (block.getType() == Material.TORCH && torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")) {
             player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You are not allowed to place this block!"));
             event.setCancelled(true);
         }
