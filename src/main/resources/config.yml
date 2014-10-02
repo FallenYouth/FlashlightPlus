@@ -1,5 +1,5 @@
 #Do not change the version number. This is important for updating and allowing a better user experience.
-Version: 1
+Version: 2
 Messages:
   Prefix: "&3[&fFlashlightPlus&3]&r "
   FlashlightOnMsg: "&2Flashlight has been enabled!"
@@ -13,6 +13,5 @@ Sign:
   Line3: "&fto use"
   Line4: ""
 Backend:
-  Metrics: true
   Cooldown: 30
 

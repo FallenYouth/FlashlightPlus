@@ -19,7 +19,7 @@ import org.bukkit.potion.PotionEffectType;
  */
 
 public class EventListener implements Listener {
-
+    //Removes night vision effect
     @EventHandler
     public void onLeave(PlayerQuitEvent e) {
         Player player = (Player) e.getPlayer();
@@ -29,7 +29,7 @@ public class EventListener implements Listener {
             e.getPlayer().removePotionEffect(PotionEffectType.NIGHT_VISION);
         }
     }
-
+    //Enables flashlight when right clicking a torch
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
@@ -38,7 +38,7 @@ public class EventListener implements Listener {
             FlashlightPlus.togglePlayer(player);
         }
     }
-
+    //Cancels placing of "Flashlight" torch
     @EventHandler
     public void onBlockPlace(BlockPlaceEvent event) {
         Block block = event.getBlock();
