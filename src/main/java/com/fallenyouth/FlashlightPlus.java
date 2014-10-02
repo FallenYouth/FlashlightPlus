@@ -75,7 +75,8 @@ public class FlashlightPlus extends JavaPlugin {
                 try {
                     config.save(tempfile);
                 } catch (IOException e) {
-                    getLogger().warning("FlashlightPlus has an Error, please report to FallenYouth");
+                    getLogger().warning("[Error] FlashlightPlus has encountered a problem, report the issue here");
+                    getLogger().warning("https://github.com/FallenYouth/FlashlightPlus/issues/new");
                 }
                 updateConfig();
             }
