@@ -37,7 +37,7 @@ public class FlashlightPlus extends JavaPlugin {
     @Getter
     private static HashMap<UUID, Integer> cooldown = new HashMap<UUID, Integer>();
 
-    int version = 2;
+    int version = 1;
     FileConfiguration config;
 
     public void onEnable() {
