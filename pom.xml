@@ -6,7 +6,7 @@
 
     <groupId>com.FallenYouth</groupId>
     <artifactId>FlashlightPlus</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.6</version>
     <repositories>
         <repository>
             <id>spigot-repo</id>
@@ -30,13 +30,6 @@
         <version>1.7.9-R0.2-SNAPSHOT</version>
         <type>jar</type>
     </dependency>
-
-        <dependency>
-            <groupId>net.milkbowl.vault</groupId>
-            <artifactId>VaultAPI</artifactId>
-            <version>1.4</version>
-            <scope>provided</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.spigotmc</groupId>

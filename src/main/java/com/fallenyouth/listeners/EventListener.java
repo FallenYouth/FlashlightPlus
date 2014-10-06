@@ -34,7 +34,10 @@ public class EventListener implements Listener {
     public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         ItemStack torch = player.getItemInHand();
-        if ((event.getAction() == Action.RIGHT_CLICK_AIR) && (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
+        if ((event.getAction() == Action.RIGHT_CLICK_AIR) &&
+                (torch.hasItemMeta()) &&
+                (torch.getItemMeta().getDisplayName() != null) &&
+                (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
             FlashlightPlus.togglePlayer(player);
         }
     }
