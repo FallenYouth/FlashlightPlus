@@ -74,34 +74,11 @@ public class ItemBuilder {
      * @param lores Lores
      * @return ItemBuilder
      */
-    public ItemBuilder withLores(String[] lores) {
+    public ItemBuilder withLores(String... lores) {
         Collections.addAll(this.lores, lores);
         return this;
     }
 
-    /**
-     * Add multiple lore lines
-     *
-     * @param lores Lores
-     * @return ItemBuilder
-     */
-    public ItemBuilder withLores(List<String> lores) {
-        for (String lore : lores) {
-            this.lores.add(lore);
-        }
-        return this;
-    }
-
-    /**
-     * Add a single lore line
-     *
-     * @param lore Lore
-     * @return ItemBuilder
-     */
-    public ItemBuilder withLore(String lore) {
-        lores.add(lore);
-        return this;
-    }
 
     /**
      * Add a enchantment
