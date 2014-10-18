@@ -6,6 +6,6 @@ FlashlightPlus is a flashlight plugin for minecraft that applies a potion effect
 ###Supported Platforms:
 * Bukkit
 
-###License
+License
 ==============
 FlashlightPlus is licensed under the [MIT License](http://opensource.org/licenses/MIT). Feel free to contribute to the project.
