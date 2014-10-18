@@ -25,9 +25,9 @@ public class CommandExecute implements CommandExecutor {
         Player player = (Player) sender;
         if (cmd.getName().equalsIgnoreCase("flashlight") && (player.hasPermission("flashlight.use"))) {
             if (args.length != 1) {
-                player.sendMessage(ChatColor.GREEN + "=====================================");
+                player.sendMessage(ChatColor.GREEN + "====================================");
                 player.sendMessage(ChatColor.GOLD + "Usage: /flashlight on/off/spawn/reload" + ChatColor.BLACK + "/ctb");
-                player.sendMessage(ChatColor.GREEN + "=====================================");
+                player.sendMessage(ChatColor.GREEN + "====================================");
             }
         }
         if (args.length == 1) {
@@ -51,6 +51,7 @@ public class CommandExecute implements CommandExecutor {
             } else {
                 player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Messages.NoPermMsg"))));
             }
+            //something?
         }
         return true;
     }
