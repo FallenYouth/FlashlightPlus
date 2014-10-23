@@ -38,7 +38,6 @@ public class FlashlightPlus extends JavaPlugin {
     private static HashMap<UUID, Integer> cooldown = new HashMap<UUID, Integer>();
 
     int version = 1;
-    FileConfiguration config;
 
     public void onEnable() {
         plugin = this;
@@ -75,7 +74,7 @@ public class FlashlightPlus extends JavaPlugin {
                 try {
                     config.save(tempfile);
                 } catch (IOException e) {
-                    getLogger().warning("[Error] FlashlightPlus has encountered a problem, report the issue here");
+                    getLogger().warning("[Error] FlashlightPlus has encountered a problem, report the issue @");
                     getLogger().warning("https://github.com/FallenYouth/FlashlightPlus/issues/new");
                 }
                 updateConfig();
@@ -99,10 +98,6 @@ public class FlashlightPlus extends JavaPlugin {
         this.getConfig().set("Backend.Cooldown", oldC.getInt("Backend.Cooldown"));
         this.saveConfig();
     }
-    public static String getConfigMessage(String message) {
-        return getMessage(getPlugin().getConfig().getConfigurationSection("Messages").getString(message));
-    }
-
     public static String getMessage(String message) {
         return ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getConfigurationSection("Messages").getString("Prefix") + message);
     }
