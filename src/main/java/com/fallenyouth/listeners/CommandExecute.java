@@ -25,9 +25,9 @@ public class CommandExecute implements CommandExecutor {
         Player player = (Player) sender;
         if (cmd.getName().equalsIgnoreCase("flashlight") && (player.hasPermission("flashlight.use"))) {
             if (args.length != 1) {
-                player.sendMessage(ChatColor.GOLD.toString() + ChatColor.UNDERLINE + "---------------" + ChatColor.GREEN + "o0o" + ChatColor.GOLD.toString() + ChatColor.UNDERLINE + "---------------");
+                player.sendMessage(ChatColor.GOLD.toString() + ChatColor.UNDERLINE + "--------------" + ChatColor.GREEN + "o0o" + ChatColor.GOLD.toString() + ChatColor.UNDERLINE + "--------------");
                 player.sendMessage(ChatColor.GREEN + "Usage: /flashlight on/off/spawn/reload" + ChatColor.BLACK + "/ctb");
-                player.sendMessage(ChatColor.GOLD.toString() + ChatColor.UNDERLINE + "---------------------------------");
+                player.sendMessage(ChatColor.GOLD.toString() + ChatColor.UNDERLINE + "-------------------------------");
             }
         }
         if (args.length == 1) {
