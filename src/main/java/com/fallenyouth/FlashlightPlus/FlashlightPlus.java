@@ -1,8 +1,8 @@
 package com.fallenyouth.FlashlightPlus;
 
 import com.fallenyouth.FlashlightPlus.listeners.CommandExecute;
-import com.fallenyouth.FlashlightPlus.listeners.SignListener;
 import com.fallenyouth.FlashlightPlus.listeners.EventListener;
+import com.fallenyouth.FlashlightPlus.listeners.SignListener;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -39,6 +39,51 @@ public class FlashlightPlus extends JavaPlugin {
     private static HashMap<UUID, Integer> cooldown = new HashMap<UUID, Integer>();
 
     int version = 1;
+
+    public static String getMessage(String message) {
+        return ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getConfigurationSection("Messages").getString("Prefix") + message);
+    }
+
+    public static void togglePlayer(Player player) {
+        if (player.hasPermission("flashlight.use.torch")) {
+            if (!getFlashLightToggle().contains(player.getName())) {
+                togglePlayerOn(player);
+            } else {
+                togglePlayerOff(player);
+            }
+        }
+    }
+
+    public static void togglePlayerOn(Player player) {
+        if (addToCooldown(player)) return;
+        player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
+        player.sendMessage(getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg"))));
+        getFlashLightToggle().add(player.getName());
+        player.playEffect(player.getLocation(), Effect.CLICK1, 5);
+    }
+
+    public static void togglePlayerOff(Player player) {
+        if (addToCooldown(player)) return;
+        player.removePotionEffect(PotionEffectType.NIGHT_VISION);
+        player.sendMessage(getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOffMsg"))));
+        getFlashLightToggle().remove(player.getName());
+        player.playEffect(player.getLocation(), Effect.CLICK2, 5);
+    }
+
+    public static boolean addToCooldown(Player player) {
+        if (isInCooldown(player)) {
+            player.sendMessage(getMessage(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Messages.CooldownMsg"))));
+            return true;
+        } else {
+            if (!player.hasPermission("flashlight.bypasscooldown"))
+                cooldown.put(player.getUniqueId(), getPlugin().getConfig().getInt("Backend.Cooldown", 30));
+            return false;
+        }
+    }
+
+    public static boolean isInCooldown(Player player) {
+        return cooldown.containsKey(player.getUniqueId());
+    }
 
     public void onEnable() {
         plugin = this;
@@ -90,6 +135,7 @@ public class FlashlightPlus extends JavaPlugin {
             }
         }
     }
+
     private void updateConfig() {
         File tempfile = new File(this.getDataFolder() + File.separator + "oldconfig.yml");
 
@@ -106,48 +152,5 @@ public class FlashlightPlus extends JavaPlugin {
         this.getConfig().set("Sign.Line4", oldC.getString("Sign.Line4"));
         this.getConfig().set("Backend.Cooldown", oldC.getInt("Backend.Cooldown"));
         this.saveConfig();
-    }
-    public static String getMessage(String message) {
-        return ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getConfigurationSection("Messages").getString("Prefix") + message);
-    }
-
-    public static void togglePlayer(Player player) {
-        if (player.hasPermission("flashlight.use.torch")) {
-            if (!getFlashLightToggle().contains(player.getName())) {
-                togglePlayerOn(player);
-            } else {
-                togglePlayerOff(player);
-            }
-        }
-    }
-
-    public static void togglePlayerOn(Player player) {
-        if (addToCooldown(player)) return;
-        player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
-        player.sendMessage(getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg"))));
-        getFlashLightToggle().add(player.getName());
-        player.playEffect(player.getLocation(), Effect.CLICK1, 5);
-    }
-    public static void togglePlayerOff(Player player) {
-        if (addToCooldown(player)) return;
-        player.removePotionEffect(PotionEffectType.NIGHT_VISION);
-        player.sendMessage(getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOffMsg"))));
-        getFlashLightToggle().remove(player.getName());
-        player.playEffect(player.getLocation(), Effect.CLICK2, 5);
-    }
-
-    public static boolean addToCooldown(Player player) {
-        if (isInCooldown(player)) {
-            player.sendMessage(getMessage(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Messages.CooldownMsg"))));
-            return true;
-        } else {
-            if (!player.hasPermission("flashlight.bypasscooldown"))
-                cooldown.put(player.getUniqueId(), getPlugin().getConfig().getInt("Backend.Cooldown", 30));
-            return false;
-        }
-    }
-
-    public static boolean isInCooldown(Player player) {
-        return cooldown.containsKey(player.getUniqueId());
     }
 }
