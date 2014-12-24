@@ -25,6 +25,8 @@
         <module name="FlashlightPlus" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="FlashlightPlus" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
-

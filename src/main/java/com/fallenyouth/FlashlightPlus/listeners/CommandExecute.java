@@ -1,7 +1,7 @@
-package com.fallenyouth.listeners;
+package com.fallenyouth.FlashlightPlus.listeners;
 
-import com.fallenyouth.FlashlightPlus;
-import com.fallenyouth.utils.ItemBuilder;
+import com.fallenyouth.FlashlightPlus.FlashlightPlus;
+import com.fallenyouth.FlashlightPlus.utils.ItemBuilder;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -25,9 +25,9 @@ public class CommandExecute implements CommandExecutor {
         Player player = (Player) sender;
         if (cmd.getName().equalsIgnoreCase("flashlight") && (player.hasPermission("flashlight.use"))) {
             if (args.length != 1) {
-                player.sendMessage(ChatColor.GOLD.toString() + ChatColor.UNDERLINE + "--------------" + ChatColor.GREEN + "o0o" + ChatColor.GOLD.toString() + ChatColor.UNDERLINE + "--------------");
-                player.sendMessage(ChatColor.GREEN + "Usage: /flashlight on/off/spawn/reload" + ChatColor.BLACK + "/ctb");
-                player.sendMessage(ChatColor.GOLD.toString() + ChatColor.UNDERLINE + "-------------------------------");
+                player.sendMessage(ChatColor.GOLD.toString() + ChatColor.UNDERLINE + "-------------" + ChatColor.GREEN + "o0o" + ChatColor.GOLD.toString() + ChatColor.UNDERLINE + "-------------");
+                player.sendMessage(ChatColor.GREEN + "Usage: /flashlight on/off/spawn/reload");
+                player.sendMessage(ChatColor.GOLD.toString() + ChatColor.UNDERLINE + "-----------------------------");
             }
         }
         if (args.length == 1) {
@@ -45,9 +45,6 @@ public class CommandExecute implements CommandExecutor {
             } else if (args[0].equalsIgnoreCase("reload") && player.hasPermission("flashlight.admin.reload")) {
                 FlashlightPlus.getPlugin().reloadConfig();
                 sender.sendMessage(FlashlightPlus.getMessage("&aConfiguration file reloaded."));
-            } else if (args[0].equalsIgnoreCase("ctb")) {
-                player.sendMessage(ChatColor.GOLD + "This plugin is using a ItemBuilder class by CraftThatBlock");
-                player.sendMessage(ChatColor.GOLD + "~Craft~is~boss~ < vouch");
             } else {
                 player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Messages.NoPermMsg"))));
             }

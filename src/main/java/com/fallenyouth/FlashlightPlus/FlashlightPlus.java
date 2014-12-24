@@ -1,8 +1,8 @@
-package com.fallenyouth;
+package com.fallenyouth.FlashlightPlus;
 
-import com.fallenyouth.listeners.CommandExecute;
-import com.fallenyouth.listeners.EventListener;
-import com.fallenyouth.listeners.SignListener;
+import com.fallenyouth.FlashlightPlus.listeners.CommandExecute;
+import com.fallenyouth.FlashlightPlus.listeners.SignListener;
+import com.fallenyouth.FlashlightPlus.listeners.EventListener;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.mcstats.Metrics;
 
 import java.io.File;
 import java.io.IOException;
@@ -47,6 +48,14 @@ public class FlashlightPlus extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SignListener(), this);
         getCommand("flashlight").setExecutor(new CommandExecute());
 
+        if (getConfig().getBoolean("Backend.Metrics", true)) {
+            try {
+                Metrics metrics = new Metrics(this);
+                metrics.start();
+            } catch (IOException e) {
+                getLogger().warning(getMessage("Could not send stats to MCStats :("));
+            }
+        }
         Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
             @Override
             public void run() {

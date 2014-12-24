@@ -1,4 +1,4 @@
-package com.fallenyouth.utils;
+package com.fallenyouth.FlashlightPlus.utils;
 
 import lombok.Data;
 import org.bukkit.Color;
