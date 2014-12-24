@@ -40,6 +40,36 @@ public class FlashlightPlus extends JavaPlugin {
 
     int version = 1;
 
+    public void onEnable() {
+        plugin = this;
+        loadConfig();
+
+        getServer().getPluginManager().registerEvents(new EventListener(), this);
+        getServer().getPluginManager().registerEvents(new SignListener(), this);
+        getCommand("flashlight").setExecutor(new CommandExecute());
+
+        if (getConfig().getBoolean("Backend.Metrics", true)) {
+            try {
+                Metrics metrics = new Metrics(this);
+                metrics.start();
+            } catch (IOException e) {
+                getLogger().warning(getMessage("Could not send stats to MCStats :("));
+            }
+        }
+        Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
+            @Override
+            public void run() {
+                for (Object o : ((HashMap) cooldown.clone()).entrySet()) {
+                    Map.Entry pairs = (Map.Entry) o;
+                    cooldown.remove(pairs.getKey());
+                    if (((Integer) pairs.getValue()) > 0) {
+                        cooldown.put((UUID) pairs.getKey(), ((Integer) pairs.getValue()) - 1);
+                    }
+                }
+            }
+        }, 20, 20);
+    }
+
     public static String getMessage(String message) {
         return ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getConfigurationSection("Messages").getString("Prefix") + message);
     }
@@ -84,37 +114,6 @@ public class FlashlightPlus extends JavaPlugin {
     public static boolean isInCooldown(Player player) {
         return cooldown.containsKey(player.getUniqueId());
     }
-
-    public void onEnable() {
-        plugin = this;
-        loadConfig();
-
-        getServer().getPluginManager().registerEvents(new EventListener(), this);
-        getServer().getPluginManager().registerEvents(new SignListener(), this);
-        getCommand("flashlight").setExecutor(new CommandExecute());
-
-        if (getConfig().getBoolean("Backend.Metrics", true)) {
-            try {
-                Metrics metrics = new Metrics(this);
-                metrics.start();
-            } catch (IOException e) {
-                getLogger().warning(getMessage("Could not send stats to MCStats :("));
-            }
-        }
-        Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
-            @Override
-            public void run() {
-                for (Object o : ((HashMap) cooldown.clone()).entrySet()) {
-                    Map.Entry pairs = (Map.Entry) o;
-                    cooldown.remove(pairs.getKey());
-                    if (((Integer) pairs.getValue()) > 0) {
-                        cooldown.put((UUID) pairs.getKey(), ((Integer) pairs.getValue()) - 1);
-                    }
-                }
-            }
-        }, 20, 20);
-    }
-
     public void loadConfig() {
         File file = new File(this.getDataFolder() + File.separator + "config.yml");
 

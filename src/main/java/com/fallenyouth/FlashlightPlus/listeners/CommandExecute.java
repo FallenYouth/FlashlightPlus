@@ -48,7 +48,6 @@ public class CommandExecute implements CommandExecutor {
             } else {
                 player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Messages.NoPermMsg"))));
             }
-            //something?
         }
         return true;
     }
