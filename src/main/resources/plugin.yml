@@ -6,11 +6,11 @@ description: Advanced Flashlight plugin for Minecraft
 
 commands:
   flashlight:
-    description: Toggles Flashlight
+    description: Brings up Flashlight Options
 
 permissions:
   flashlight.use:
-    description: Use of the flashlight
+    description: Allows use of the flashlight =
     default: op
   flashlight.use.on:
     description: Turns the flashlight on
