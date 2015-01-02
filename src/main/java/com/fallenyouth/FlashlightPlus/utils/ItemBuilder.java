@@ -16,15 +16,19 @@ import java.util.List;
 
 /**
  * The ItemBuilder class is a class to create items very easily.
- * <p/>
- * ItemStack item = new ItemBuilder(Material.IRON_SWORD).withEnchantment(Enchantment.DAMAGE_ALL, 1, true)
- * .withLore("First line!").withLores(new String[]{"Second line!", "Thrid line!"})
- * .withAmount(2).withDurability(5).toItemStack();
+ * <pre>
+ *  ItemStack item = new ItemBuilder(Material.IRON_SWORD)
+ *      .withEnchantment(Enchantment.DAMAGE_ALL, 1, true)
+ *      .withLore("First line!")
+ *      .withLores("Second line!", "Thrid line!")
+ *      .withAmount(2)
+ *      .withDurability(5)
+ *      .toItemStack();
+ * </pre>
+ * Credits to: TheKomputerKing (Original Author)
  *
- * @author TheKomputerKing (Original Author)
  * @author CraftThatBlock
  */
-
 @Data
 public class ItemBuilder {
     private Material material;
@@ -79,6 +83,29 @@ public class ItemBuilder {
         return this;
     }
 
+    /**
+     * Add multiple lore lines
+     *
+     * @param lores Lores
+     * @return ItemBuilder
+     */
+    public ItemBuilder withLores(List<String> lores) {
+        for (String lore : lores) {
+            this.lores.add(lore);
+        }
+        return this;
+    }
+
+    /**
+     * Add a single lore line
+     *
+     * @param lore Lore
+     * @return ItemBuilder
+     */
+    public ItemBuilder withLore(String lore) {
+        lores.add(lore);
+        return this;
+    }
 
     /**
      * Add a enchantment
@@ -120,7 +147,7 @@ public class ItemBuilder {
      * The Item material must be a Potion so it applies.
      *
      * @param potion Potion
-     * @return ItemStack
+     * @return ItemBuilder
      */
     public ItemBuilder withPotion(Potion potion) {
         this.potion = potion;
@@ -130,8 +157,8 @@ public class ItemBuilder {
     /**
      * Set the color of the item. Only works with Leather armor.
      *
-     * @param color
-     * @return
+     * @param color Color
+     * @return ItemBuilder
      */
     public ItemBuilder withColor(Color color) {
         this.color = color;
@@ -141,7 +168,7 @@ public class ItemBuilder {
     /**
      * Create the ItemStack!
      *
-     * @return ItemStack
+     * @return ItemBuilder
      */
     public ItemStack toItemStack() {
         ItemStack item = new ItemStack(material);

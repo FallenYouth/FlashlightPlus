@@ -7,13 +7,14 @@ import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
+import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.mcstats.Metrics;
 
 import java.io.File;
 import java.io.IOException;
@@ -43,19 +44,13 @@ public class FlashlightPlus extends JavaPlugin {
     public void onEnable() {
         plugin = this;
         loadConfig();
+        getLogger().info("Please report any issues with this plugin to:");
+        getLogger().info("https://github.com/FallenYouth/FlashlightPlus/issues/new");
 
         getServer().getPluginManager().registerEvents(new EventListener(), this);
         getServer().getPluginManager().registerEvents(new SignListener(), this);
         getCommand("flashlight").setExecutor(new CommandExecute());
 
-        if (getConfig().getBoolean("Backend.Metrics", true)) {
-            try {
-                Metrics metrics = new Metrics(this);
-                metrics.start();
-            } catch (IOException e) {
-                getLogger().warning(getMessage("Could not send stats to MCStats :("));
-            }
-        }
         Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
             @Override
             public void run() {
@@ -70,6 +65,45 @@ public class FlashlightPlus extends JavaPlugin {
         }, 20, 20);
     }
 
+    public void loadConfig() {
+        File file = new File(this.getDataFolder() + File.separator + "config.yml");
+
+        if (!file.exists()) {
+            this.saveDefaultConfig();
+        } else {
+            FileConfiguration config = YamlConfiguration.loadConfiguration(file);
+            if (config.contains("Version") || config.getInt("Version", version) == version) {
+                file.delete();
+                File tempfile = new File(this.getDataFolder() + File.separator + "oldconfig.yml");
+                try {
+                    config.save(tempfile);
+                } catch (IOException e) {
+                    getLogger().warning("[Error] FlashlightPlus has encountered a problem, report the issue @");
+                    getLogger().warning("https://github.com/FallenYouth/FlashlightPlus/issues/new");
+                }
+                updateConfig();
+            }
+        }
+    }
+
+    private void updateConfig() {
+        File tempfile = new File(this.getDataFolder() + File.separator + "oldconfig.yml");
+
+        FileConfiguration oldC = YamlConfiguration.loadConfiguration(tempfile);
+        this.saveDefaultConfig();
+        this.getConfig().set("Messages.Prefix", oldC.getString("Messages.Prefix"));
+        this.getConfig().set("Messages.FlashlightOnMsg", oldC.getString("Messages.FlashlightOnMsg"));
+        this.getConfig().set("Messages.FlashlightOffMsg", oldC.getString("Messages.FlashlightOffMsg"));
+        this.getConfig().set("Messages.NoPermMsg", oldC.getStringList("Messages.NoPermMsg"));
+        this.getConfig().set("Messages.CooldownMsg", oldC.getString("Messages.CooldownMsg"));
+        this.getConfig().set("Sign.Line1", oldC.getString("Sign.Line1"));
+        this.getConfig().set("Sign.Line2", oldC.getString("Sign.Line2"));
+        this.getConfig().set("Sign.Line3", oldC.getString("Sign.Line3"));
+        this.getConfig().set("Sign.Line4", oldC.getString("Sign.Line4"));
+        this.getConfig().set("Backend.Cooldown", oldC.getInt("Backend.Cooldown"));
+        this.saveConfig();
+    }
+    
     public static String getMessage(String message) {
         return ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getConfigurationSection("Messages").getString("Prefix") + message);
     }
@@ -113,43 +147,5 @@ public class FlashlightPlus extends JavaPlugin {
 
     public static boolean isInCooldown(Player player) {
         return cooldown.containsKey(player.getUniqueId());
-    }
-    public void loadConfig() {
-        File file = new File(this.getDataFolder() + File.separator + "config.yml");
-
-        if (!file.exists()) {
-            this.saveDefaultConfig();
-        } else {
-            FileConfiguration config = YamlConfiguration.loadConfiguration(file);
-            if (config.contains("Version") || config.getInt("Version", version) == version) {
-                file.delete();
-                File tempfile = new File(this.getDataFolder() + File.separator + "oldconfig.yml");
-                try {
-                    config.save(tempfile);
-                } catch (IOException e) {
-                    getLogger().warning("[Error] FlashlightPlus has encountered a problem, report the issue @");
-                    getLogger().warning("https://github.com/FallenYouth/FlashlightPlus/issues/new");
-                }
-                updateConfig();
-            }
-        }
-    }
-
-    private void updateConfig() {
-        File tempfile = new File(this.getDataFolder() + File.separator + "oldconfig.yml");
-
-        FileConfiguration oldC = YamlConfiguration.loadConfiguration(tempfile);
-        this.saveDefaultConfig();
-        this.getConfig().set("Messages.Prefix", oldC.getString("Messages.Prefix"));
-        this.getConfig().set("Messages.FlashlightOnMsg", oldC.getString("Messages.FlashlightOnMsg"));
-        this.getConfig().set("Messages.FlashlightOffMsg", oldC.getString("Messages.FlashlightOffMsg"));
-        this.getConfig().set("Messages.NoPermMsg", oldC.getStringList("Messages.NoPermMsg"));
-        this.getConfig().set("Messages.CooldownMsg", oldC.getString("Messages.CooldownMsg"));
-        this.getConfig().set("Sign.Line1", oldC.getString("Sign.Line1"));
-        this.getConfig().set("Sign.Line2", oldC.getString("Sign.Line2"));
-        this.getConfig().set("Sign.Line3", oldC.getString("Sign.Line3"));
-        this.getConfig().set("Sign.Line4", oldC.getString("Sign.Line4"));
-        this.getConfig().set("Backend.Cooldown", oldC.getInt("Backend.Cooldown"));
-        this.saveConfig();
     }
 }

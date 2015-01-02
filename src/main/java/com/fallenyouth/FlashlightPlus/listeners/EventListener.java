@@ -45,7 +45,9 @@ public class EventListener implements Listener {
         Player player = event.getPlayer();
         ItemStack torch = player.getItemInHand();
         if (FlashlightPlus.addToCooldown(player)) return;
-        if (block.getType() == Material.TORCH && torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")) {
+        if (torch != null && block.getType() == Material.TORCH &&
+        (block.getType() == Material.TORCH && torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")))
+        {
             player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You are not allowed to place this block!"));
             event.setCancelled(true);
         }

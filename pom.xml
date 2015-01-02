@@ -6,7 +6,7 @@
 
     <groupId>com.fallenyouth</groupId>
     <artifactId>FlashlightPlus</artifactId>
-    <version>1.0.7</version>
+    <version>1.8-1.0.7</version>
     <name>FlashlightPlus-${project.version}</name>
     <repositories>
         <repository>
