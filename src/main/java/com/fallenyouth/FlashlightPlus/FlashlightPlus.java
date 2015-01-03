@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.mcstats.Metrics;
 
 import java.io.File;
 import java.io.IOException;
@@ -48,6 +49,16 @@ public class FlashlightPlus extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EventListener(), this);
         getServer().getPluginManager().registerEvents(new SignListener(), this);
         getCommand("flashlight").setExecutor(new CommandExecute());
+
+        if (getConfig().getBoolean("Backend.Metrics", true)) {
+            try {
+                Metrics metrics = new Metrics(this);
+                metrics.start();
+                getLogger().info("Metrics Started");
+            } catch (IOException e) {
+                getLogger().info("Failed to submit stats");
+            }
+        }
 
         Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
             @Override
