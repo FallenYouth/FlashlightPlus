@@ -31,7 +31,7 @@ public class SignListener implements Listener {
 			event.setLine(0, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line1")));
 			event.setLine(1, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line2")));
 			event.setLine(2, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line3")));
-            event.setLine(3, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line4")));
+			event.setLine(3, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line4")));
 		}
 	}
 
@@ -44,9 +44,7 @@ public class SignListener implements Listener {
 
 				if (sign.getLine(0).equals(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line1")))) {
 					FlashlightPlus.togglePlayer(player);
-				} else {
-                    player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You do not have permission to use this sign"));
-                }
+				}
 			}
 		}
 	}
