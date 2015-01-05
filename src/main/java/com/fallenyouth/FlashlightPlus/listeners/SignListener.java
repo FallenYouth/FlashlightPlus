@@ -20,18 +20,15 @@ public class SignListener implements Listener {
 	public void onSignCreate(SignChangeEvent event) {
 		Player player = event.getPlayer();
 
-		if (!player.hasPermission("flashlight.admin.sign")) {
-			player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You don't have permission to make this sign."));
-			event.setLine(0, ChatColor.RED + "Error");
-			return;
-		}
-		if (event.getLine(0).equals("[Flashlight]")) {
-			player.sendMessage(FlashlightPlus.getMessage(ChatColor.GREEN + "sign created!"));
+		if (player.hasPermission("flashlight.admin.sign")) {
+			if (event.getLine(0).equals("[Flashlight]")) {
+				player.sendMessage(FlashlightPlus.getMessage(ChatColor.GREEN + "sign created!"));
 
-			event.setLine(0, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line1")));
-			event.setLine(1, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line2")));
-			event.setLine(2, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line3")));
-			event.setLine(3, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line4")));
+				event.setLine(0, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line1")));
+				event.setLine(1, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line2")));
+				event.setLine(2, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line3")));
+				event.setLine(3, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line4")));
+			}
 		}
 	}
 
