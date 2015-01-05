@@ -111,6 +111,7 @@ public class FlashlightPlus extends JavaPlugin {
         this.getConfig().set("Sign.Line4", oldC.getString("Sign.Line4"));
         this.getConfig().set("Backend.Cooldown", oldC.getInt("Backend.Cooldown"));
         this.saveConfig();
+        getLogger().info("Configuration File Updated!");
     }
     
     public static String getMessage(String message) {

@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e33be2cf-5bde-4050-9aa2-895c1e5fd51b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java" afterPath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="f8be1eb1-8d03-4186-bb67-e01b26071a66" name="Failed commit: Default" comment="Changed a lot of stuff." />
@@ -44,8 +43,8 @@
       <file leaf-file-name="FlashlightPlus.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.69279" vertical-offset="289" max-vertical-offset="2771">
-              <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.79937303" vertical-offset="1411" max-vertical-offset="2788">
+              <caret line="113" column="53" selection-start-line="113" selection-start-column="53" selection-end-line="113" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1067#1075#0" expanded="true" />
@@ -690,7 +689,7 @@
       <workItem from="1420426299457" duration="495000" />
       <workItem from="1420426802681" duration="312000" />
       <workItem from="1420427123355" duration="23000" />
-      <workItem from="1420496083042" duration="2086000" />
+      <workItem from="1420496083042" duration="2521000" />
     </task>
     <task id="LOCAL-00001" summary="Changed a lot of stuff.">
       <created>1404608119525</created>
@@ -968,11 +967,17 @@
       <option name="project" value="LOCAL" />
       <updated>1420496532460</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Change Log:&#10;Config getting updated with new config on startup.">
+      <created>1420498625363</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1420498625363</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32381000" />
+    <option name="totallyTimeSpent" value="32816000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1051,7 +1056,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Fixed the permissions" />
     <MESSAGE value="Added to the pom.xml" />
     <MESSAGE value="Change Log:&#10;Added more config messages&#10;Added check if the player has the torch in there inv already&#10;Changed a few classes" />
     <MESSAGE value="Change Log:&#10;Added untested changes" />
@@ -1076,7 +1080,8 @@
     <MESSAGE value="Change Log:&#10;Made it make sense to me" />
     <MESSAGE value="Change Log:&#10;Fixed Sign conflicting with other signs" />
     <MESSAGE value="Change Log:&#10;Fixed all signs throwing &quot;error&quot; when player has no permission" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Log:&#10;Fixed all signs throwing &quot;error&quot; when player has no permission" />
+    <MESSAGE value="Change Log:&#10;Config getting updated with new config on startup." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Log:&#10;Config getting updated with new config on startup." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1461,8 +1466,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69279" vertical-offset="289" max-vertical-offset="2771">
-          <caret line="43" column="22" selection-start-line="43" selection-start-column="22" selection-end-line="43" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.79937303" vertical-offset="1411" max-vertical-offset="2788">
+          <caret line="113" column="53" selection-start-line="113" selection-start-column="53" selection-end-line="113" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1067#1075#0" expanded="true" />
