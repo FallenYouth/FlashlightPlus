@@ -87,10 +87,12 @@ public class FlashlightPlus extends JavaPlugin {
                 try {
                     config.save(tempfile);
                 } catch (IOException e) {
+                    e.printStackTrace();
                     getLogger().warning("[Error] FlashlightPlus has encountered a problem, report the issue @");
                     getLogger().warning("https://github.com/FallenYouth/FlashlightPlus/issues/new");
                 }
                 updateConfig();
+                getLogger().info("Configuration File updated!");
             }
         }
     }
@@ -110,8 +112,8 @@ public class FlashlightPlus extends JavaPlugin {
         this.getConfig().set("Sign.Line3", oldC.getString("Sign.Line3"));
         this.getConfig().set("Sign.Line4", oldC.getString("Sign.Line4"));
         this.getConfig().set("Backend.Cooldown", oldC.getInt("Backend.Cooldown"));
+        this.getConfig().set("Backend.Metrics", oldC.getBoolean("Backend.Metrics"));
         this.saveConfig();
-        getLogger().info("Configuration File Updated!");
     }
     
     public static String getMessage(String message) {
