@@ -25,16 +25,16 @@ public class CommandExecute implements CommandExecutor {
         Player player = (Player) sender;
         if (cmd.getName().equalsIgnoreCase("flashlight") && (player.hasPermission("flashlight.use"))) {
             if (args.length != 1) {
-                    player.sendMessage(ChatColor.GOLD.toString() + ChatColor.STRIKETHROUGH + "-------------" + ChatColor.GREEN + "o0o" + ChatColor.GOLD.toString() + ChatColor.STRIKETHROUGH + "-------------");
-                    player.sendMessage(ChatColor.DARK_RED + "Usage:");
-                    player.sendMessage(ChatColor.GREEN + "/flashlight <sub-command>");
-                    player.sendMessage(ChatColor.DARK_RED + "Sub-Commands:");
-                    player.sendMessage(ChatColor.GREEN + "on - Turns Flashlight on");
-                    player.sendMessage(ChatColor.GREEN + "off - Turns Flashlight off");
-                    player.sendMessage(ChatColor.GREEN + "spawn - Spawns Flashlight Torch");
-                    player.sendMessage(ChatColor.DARK_RED + "Admin Commands:");
-                    player.sendMessage(ChatColor.GREEN + "reload - Reloads the config");
-                    player.sendMessage(ChatColor.GOLD.toString() + ChatColor.STRIKETHROUGH + "-----------------------------");
+                player.sendMessage(ChatColor.GOLD.toString() + ChatColor.STRIKETHROUGH + "-------------" + ChatColor.GREEN + "o0o" + ChatColor.GOLD.toString() + ChatColor.STRIKETHROUGH + "-------------");
+                player.sendMessage(ChatColor.DARK_RED + "Usage:");
+                player.sendMessage(ChatColor.GREEN + "/flashlight <sub-command>");
+                player.sendMessage(ChatColor.DARK_RED + "Sub-Commands:");
+                player.sendMessage(ChatColor.GREEN + "on - Turns Flashlight on");
+                player.sendMessage(ChatColor.GREEN + "off - Turns Flashlight off");
+                player.sendMessage(ChatColor.GREEN + "spawn - Spawns Flashlight Torch");
+                player.sendMessage(ChatColor.DARK_RED + "Admin Commands:");
+                player.sendMessage(ChatColor.GREEN + "reload - Reloads the config");
+                player.sendMessage(ChatColor.GOLD.toString() + ChatColor.STRIKETHROUGH + "-----------------------------");
             }
             if (args.length == 1) {
                 if (args[0].equalsIgnoreCase("on") && player.hasPermission("flashlight.use.on")) {
