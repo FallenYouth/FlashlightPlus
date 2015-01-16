@@ -134,7 +134,7 @@ public class FlashlightPlus extends JavaPlugin {
         player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
         player.sendMessage(getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOnMsg"))));
         getFlashLightToggle().add(player.getName());
-        player.playEffect(player.getLocation(), Effect.CLICK1, 5);
+        player.getWorld().playEffect(player.getLocation(), Effect.CLICK1, 5);
     }
 
     public static void togglePlayerOff(Player player) {
@@ -142,7 +142,7 @@ public class FlashlightPlus extends JavaPlugin {
         player.removePotionEffect(PotionEffectType.NIGHT_VISION);
         player.sendMessage(getMessage(ChatColor.translateAlternateColorCodes('&', getPlugin().getConfig().getString("Messages.FlashlightOffMsg"))));
         getFlashLightToggle().remove(player.getName());
-        player.playEffect(player.getLocation(), Effect.CLICK2, 5);
+        player.getWorld().playEffect(player.getLocation(), Effect.CLICK2, 5);
     }
 
     public static boolean addToCooldown(Player player) {
