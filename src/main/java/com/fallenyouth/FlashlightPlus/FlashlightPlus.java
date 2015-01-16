@@ -15,8 +15,7 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.mcstats.Metrics;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,7 +38,7 @@ public class FlashlightPlus extends JavaPlugin {
     private static HashMap<UUID, Integer> cooldown = new HashMap<UUID, Integer>();
 
     int version = 2;
-    
+
     public void onEnable() {
         plugin = this;
         loadConfig();
@@ -56,7 +55,7 @@ public class FlashlightPlus extends JavaPlugin {
                 metrics.start();
                 getLogger().info("Metrics Started");
             } catch (IOException e) {
-                getLogger().info("Failed to submit stats");
+                getLogger().warning("Failed to submit stats");
             }
         }
 
