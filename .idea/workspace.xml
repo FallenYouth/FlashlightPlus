@@ -7,7 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e33be2cf-5bde-4050-9aa2-895c1e5fd51b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java" afterPath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java" afterPath="$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/FlashlightPlus.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/CommandExecute.java" afterPath="$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/CommandExecute.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/EventListener.java" afterPath="$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/EventListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/SignListener.java" afterPath="$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/SignListener.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/utils/ItemBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/utils/ItemBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="f8be1eb1-8d03-4186-bb67-e01b26071a66" name="Failed commit: Default" comment="Changed a lot of stuff." />
@@ -41,16 +47,12 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="FlashlightPlus.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/FlashlightPlus.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44315544" vertical-offset="859" max-vertical-offset="2505">
-              <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.6373293" vertical-offset="0" max-vertical-offset="2430">
+              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2044#2514#0" expanded="true" />
-                <element signature="e#2513#2514#0" expanded="true" />
-                <element signature="e#6813#6814#0" expanded="true" />
-                <element signature="e#6878#6879#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -88,6 +90,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/utils/Lang.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java" />
+        <option value="$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/FlashlightPlus.java" />
       </list>
     </option>
   </component>
@@ -182,6 +185,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -248,69 +252,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlashlightPlus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlashlightPlus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlashlightPlus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlashlightPlus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlashlightPlus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FlashlightPlus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="listeners" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -640,13 +583,13 @@
       <workItem from="1420746461494" duration="16000" />
       <workItem from="1420751702668" duration="369000" />
       <workItem from="1421348979360" duration="65000" />
-      <workItem from="1421435441586" duration="1214000" />
-    </task>
-    <task id="LOCAL-00002" summary="Fixed the permissions">
-      <created>1404608762206</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1404608762206</updated>
+      <workItem from="1421435441586" duration="1286000" />
+      <workItem from="1421857164807" duration="252000" />
+      <workItem from="1421884649009" duration="159000" />
+      <workItem from="1422033562838" duration="569000" />
+      <workItem from="1422291351497" duration="47000" />
+      <workItem from="1424888466108" duration="15000" />
+      <workItem from="1430415185502" duration="67000" />
     </task>
     <task id="LOCAL-00003" summary="Added to the pom.xml">
       <created>1404609421283</created>
@@ -936,11 +879,17 @@
       <option name="project" value="LOCAL" />
       <updated>1421436340574</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Change Log:&#10;Fixed playEffect being depreciated,">
+      <created>1421436773293</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1421436773293</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36553000" />
+    <option name="totallyTimeSpent" value="37734000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1276" height="777" extended-state="6" />
@@ -958,21 +907,21 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32554746" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329927" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23014587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23014587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850778" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3973799" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32554746" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3970803" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1019,7 +968,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Change Log:&#10;Added untested changes" />
     <MESSAGE value="Change Log:&#10;Plugin now automaticly makes new Config options." />
     <MESSAGE value="Change Log:&#10;Fixed bug for unlimited torches. - untested" />
     <MESSAGE value="Change Log:&#10;Made some changes." />
@@ -1044,7 +992,8 @@
     <MESSAGE value="Change Log:&#10;Config getting updated with new config on startup." />
     <MESSAGE value="Change Log:&#10;Config getting upda" />
     <MESSAGE value="Change Log:&#10;Moved some things around." />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Log:&#10;Moved some things around." />
+    <MESSAGE value="Change Log:&#10;Fixed playEffect being depreciated," />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Log:&#10;Fixed playEffect being depreciated," />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1057,7 +1006,17 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/FlashlightPlus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2505">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/FlashlightPlus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1950">
           <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
@@ -1071,35 +1030,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/CommandExecute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/CommandExecute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="855">
           <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/FlashlightPlus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2025">
           <caret line="128" column="5" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/SignListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/SignListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="870">
           <caret line="44" column="152" selection-start-line="44" selection-start-column="152" selection-end-line="44" selection-end-column="152" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/CommandExecute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/CommandExecute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="208" max-vertical-offset="855">
           <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/utils/ItemBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/utils/ItemBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="480" max-vertical-offset="3165">
           <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
@@ -1113,28 +1072,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/EventListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="555" max-vertical-offset="675">
           <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/FlashlightPlus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1950">
           <caret line="105" column="156" selection-start-line="105" selection-start-column="156" selection-end-line="105" selection-end-column="156" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/SignListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/SignListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="870">
           <caret line="44" column="152" selection-start-line="44" selection-start-column="152" selection-end-line="44" selection-end-column="152" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/CommandExecute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/CommandExecute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="163" max-vertical-offset="855">
           <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
@@ -1148,28 +1107,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/EventListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="675">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/FlashlightPlus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1950">
           <caret line="105" column="156" selection-start-line="105" selection-start-column="156" selection-end-line="105" selection-end-column="156" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/SignListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/SignListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="870">
           <caret line="44" column="152" selection-start-line="44" selection-start-column="152" selection-end-line="44" selection-end-column="152" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/CommandExecute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/CommandExecute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="163" max-vertical-offset="855">
           <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
@@ -1183,28 +1142,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/EventListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="675">
           <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/FlashlightPlus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1950">
           <caret line="105" column="156" selection-start-line="105" selection-start-column="156" selection-end-line="105" selection-end-column="156" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/SignListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/SignListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="660" max-vertical-offset="870">
           <caret line="44" column="152" selection-start-line="44" selection-start-column="152" selection-end-line="44" selection-end-column="152" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/CommandExecute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/CommandExecute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="945">
           <caret line="39" column="120" selection-start-line="39" selection-start-column="120" selection-end-line="39" selection-end-column="120" />
@@ -1218,14 +1177,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/EventListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="540">
           <caret line="35" column="48" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/FlashlightPlus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1290" max-vertical-offset="1935">
           <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
@@ -1239,7 +1198,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/CommandExecute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/CommandExecute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="690" max-vertical-offset="1005">
           <caret line="46" column="60" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
@@ -1253,21 +1212,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/SignListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/SignListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="855">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/EventListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="720">
           <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/FlashlightPlus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1065" max-vertical-offset="1635">
           <caret line="88" column="42" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
@@ -1288,21 +1247,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/SignListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/SignListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="840">
           <caret line="17" column="47" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/EventListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="705">
           <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/CommandExecute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/CommandExecute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="900">
           <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
@@ -1348,7 +1307,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="270">
           <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1368,7 +1326,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/utils/ItemBuilder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/utils/ItemBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="3621">
           <caret line="20" column="57" selection-start-line="20" selection-start-column="57" selection-end-line="21" selection-end-column="32" />
@@ -1378,7 +1336,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/SignListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/SignListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
           <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
@@ -1388,7 +1346,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/EventListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
@@ -1396,7 +1354,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/listeners/CommandExecute.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/listeners/CommandExecute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.39211136" vertical-offset="439" max-vertical-offset="870">
           <caret line="26" column="35" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
@@ -1406,22 +1364,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10440835" vertical-offset="0" max-vertical-offset="431">
+        <state vertical-scroll-proportion="0.06828528" vertical-offset="0" max-vertical-offset="659">
           <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/fallenyouth/FlashlightPlus/FlashlightPlus.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/net/mattslab/FlashlightPlus/FlashlightPlus.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44315544" vertical-offset="859" max-vertical-offset="2505">
-          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.6373293" vertical-offset="0" max-vertical-offset="2430">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2044#2514#0" expanded="true" />
-            <element signature="e#2513#2514#0" expanded="true" />
-            <element signature="e#6813#6814#0" expanded="true" />
-            <element signature="e#6878#6879#0" expanded="true" />
           </folding>
         </state>
       </provider>

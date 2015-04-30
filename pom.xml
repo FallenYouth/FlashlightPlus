@@ -65,7 +65,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>com.fallenyouth.FlashlightPlus.FlashlightPlus</mainClass>
+                            <mainClass>net.mattslab.FlashlightPlus.FlashlightPlus</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

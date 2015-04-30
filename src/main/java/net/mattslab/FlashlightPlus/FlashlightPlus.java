@@ -1,8 +1,8 @@
-package com.fallenyouth.FlashlightPlus;
+package net.mattslab.FlashlightPlus;
 
-import com.fallenyouth.FlashlightPlus.listeners.CommandExecute;
-import com.fallenyouth.FlashlightPlus.listeners.EventListener;
-import com.fallenyouth.FlashlightPlus.listeners.SignListener;
+import net.mattslab.FlashlightPlus.listeners.CommandExecute;
+import net.mattslab.FlashlightPlus.listeners.EventListener;
+import net.mattslab.FlashlightPlus.listeners.SignListener;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

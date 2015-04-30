@@ -1,7 +1,7 @@
-package com.fallenyouth.FlashlightPlus.listeners;
+package net.mattslab.FlashlightPlus.listeners;
 
-import com.fallenyouth.FlashlightPlus.FlashlightPlus;
-import com.fallenyouth.FlashlightPlus.utils.ItemBuilder;
+import net.mattslab.FlashlightPlus.FlashlightPlus;
+import net.mattslab.FlashlightPlus.utils.ItemBuilder;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
