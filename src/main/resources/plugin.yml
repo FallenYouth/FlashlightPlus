@@ -10,7 +10,7 @@ commands:
 
 permissions:
   flashlight.use:
-    description: Allows use of the flashlight =
+    description: Allows use of the flashlight
     default: op
   flashlight.use.on:
     description: Turns the flashlight on
