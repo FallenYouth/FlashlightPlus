@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="FlashlightPlus:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/FlashlightPlus_jar</output-path>
-    <root id="archive" name="FlashlightPlus.jar">
-      <element id="module-output" name="FlashlightPlus" />
-    </root>
-  </artifact>
-</component>
