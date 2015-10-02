@@ -20,4 +20,6 @@ But first there are a few things you must follow when making a pull request.
 License
 ==============
 FlashlightPlus is licensed under the [MIT License](http://opensource.org/licenses/MIT). Feel free to contribute to the project.
+Various Statistics
+==============
 ![mcstats](http://i.mcstats.org/FlashlightPlus/Global+Statistics.borderless.png "Stats")
