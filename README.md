@@ -1,4 +1,5 @@
-FlashlightPlus [![Build Status](https://travis-ci.org/FallenYouth/FlashlightPlus.svg?branch=master)](https://travis-ci.org/FallenYouth/FlashlightPlus)
+[![Build Status](https://travis-ci.org/MattsLab/FlashlightPlus.svg?branch=v1.0.10)](https://travis-ci.org/MattsLab/FlashlightPlus)
+FlashlightPlus
 ==============
 
 FlashlightPlus is a flashlight plugin for minecraft that applies a potion effect that allows players to see in dark caves.

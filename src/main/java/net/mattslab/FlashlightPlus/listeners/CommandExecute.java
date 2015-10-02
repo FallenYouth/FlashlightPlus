@@ -23,7 +23,7 @@ public class CommandExecute implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
-        if (cmd.getName().equalsIgnoreCase("flashlight") && (player.hasPermission("flashlight.use"))) {
+        if (cmd.getName().equalsIgnoreCase("flashlight") || cmd.getName().equals("fl") && (player.hasPermission("flashlight.use"))) {
             if (args.length != 1) {
                 player.sendMessage(ChatColor.GOLD.toString() + ChatColor.STRIKETHROUGH + "-------------" + ChatColor.GREEN + "o0o" + ChatColor.GOLD.toString() + ChatColor.STRIKETHROUGH + "-------------");
                 player.sendMessage(ChatColor.DARK_RED + "Usage:");
