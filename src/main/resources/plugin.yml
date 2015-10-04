@@ -1,34 +1,33 @@
 name: FlashlightPlus
 author: FallenYouth # With the help of CraftThatBlock
 version: ${project.version}
-main: FlashlightPlus
+main: net.mattslab.FlashlightPlus.FlashlightPlus
 description: Advanced Flashlight plugin for Minecraft
 
 commands:
   flashlight:
-    description: Brings up Flashlight Options
+    description: Toggles Flashlight
+  fl:
+    description: Alias of flashlightn command
 
 permissions:
-  flashlight.use:
+  flashlight.toggle:
     description: Allows use of the flashlight
     default: op
-  flashlight.use.on:
-    description: Turns the flashlight on
+  flashlight.help:
+    description: Brigns up Flashlight Menu
     default: op
-  flashlight.use.off:
-    description: Turns flashlight off
-    default: op
-  flashlight.use.spawn:
+  flashlight.spawn:
     description: Spawns in Flashlight torch
-    default: op
-  flashlight.admin.reload:
-    description: Reload the configuration file
     default: op
   flashlight.bypasscooldown:
     description: Allow bypass of the cool down
     default: op
   flashlight.use.torch:
     description: Allows use of the torch
+    default: op
+  flashlight.admin.reload:
+    description: Reload the configuration file
     default: op
   flashlight.admin.sign:
     description: Ability to create FlashlightPlus sign

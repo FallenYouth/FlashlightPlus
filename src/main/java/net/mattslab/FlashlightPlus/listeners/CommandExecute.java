@@ -11,7 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 /**
- * Made by FallenYouth
+ * Made by Matt
  */
 
 public class CommandExecute implements CommandExecutor {
@@ -23,37 +23,40 @@ public class CommandExecute implements CommandExecutor {
             return true;
         }
         Player player = (Player) sender;
-        if (cmd.getName().equalsIgnoreCase("flashlight") || cmd.getName().equals("fl") && (player.hasPermission("flashlight.use"))) {
+        if (cmd.getName().equalsIgnoreCase("flashlight") || cmd.getName().equalsIgnoreCase("fl") && (player.hasPermission("flashlight.toggle"))) {
             if (args.length != 1) {
+                FlashlightPlus.togglePlayer(player);
+            }
+        }
+        if (args.length == 1) {
+            if (args[0].equalsIgnoreCase("help") && player.hasPermission("flashlight.help")) {
                 player.sendMessage(ChatColor.GOLD.toString() + ChatColor.STRIKETHROUGH + "-------------" + ChatColor.GREEN + "o0o" + ChatColor.GOLD.toString() + ChatColor.STRIKETHROUGH + "-------------");
                 player.sendMessage(ChatColor.DARK_RED + "Usage:");
-                player.sendMessage(ChatColor.GREEN + "/flashlight <sub-command>");
+                player.sendMessage(ChatColor.GREEN + "/flashlight - Toggles flashlight on/off");
                 player.sendMessage(ChatColor.DARK_RED + "Sub-Commands:");
-                player.sendMessage(ChatColor.GREEN + "on - Turns Flashlight on");
-                player.sendMessage(ChatColor.GREEN + "off - Turns Flashlight off");
+                player.sendMessage(ChatColor.DARK_PURPLE + "/flashlight <sub-command>");
                 player.sendMessage(ChatColor.GREEN + "spawn - Spawns Flashlight Torch");
+                player.sendMessage(ChatColor.GREEN + "help - Displays the flashlight menu");
                 player.sendMessage(ChatColor.DARK_RED + "Admin Commands:");
                 player.sendMessage(ChatColor.GREEN + "reload - Reloads the config");
                 player.sendMessage(ChatColor.GOLD.toString() + ChatColor.STRIKETHROUGH + "-----------------------------");
-            }
-            if (args.length == 1) {
-                if (args[0].equalsIgnoreCase("on") && player.hasPermission("flashlight.use.on")) {
-                    FlashlightPlus.togglePlayerOn(player);
-                } else if (args[0].equalsIgnoreCase("off") && player.hasPermission("flashlight.use.off")) {
-                    FlashlightPlus.togglePlayerOff(player);
-                } else if (args[0].equalsIgnoreCase("spawn") && player.hasPermission("flashlight.use.spawn")) {
-                    ItemStack flashlight = new ItemBuilder(Material.TORCH)
-                            .withName(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")
-                            .withLores(ChatColor.RED + "Usage:", ChatColor.GREEN + "Right click for a night vision effect")
-                            .withAmount(1)
-                            .toItemStack();
+            } else if (args[0].equalsIgnoreCase("spawn") && player.hasPermission("flashlight.spawn")) {
+                ItemStack flashlight = new ItemBuilder(Material.TORCH)
+                        .withName(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")
+                        .withLores(ChatColor.RED + "Usage:", ChatColor.GREEN + "Right click for a night vision effect")
+                        .withAmount(1)
+                        .toItemStack();
+                if (!player.getInventory().containsAtLeast(flashlight, 1)) {
                     player.getInventory().addItem(flashlight);
-                } else if (args[0].equalsIgnoreCase("reload") && player.hasPermission("flashlight.admin.reload")) {
-                    FlashlightPlus.getPlugin().reloadConfig();
-                    sender.sendMessage(FlashlightPlus.getMessage("&aConfiguration file reloaded."));
                 } else {
-                    player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Messages.NoPermMsg"))));
+                    player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You already have a flashlight in your inventory!"));
                 }
+
+            } else if (args[0].equalsIgnoreCase("reload") && player.hasPermission("flashlight.admin.reload")) {
+                FlashlightPlus.getPlugin().reloadConfig();
+                sender.sendMessage(FlashlightPlus.getMessage("&aConfiguration file reloaded."));
+            } else {
+                player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Messages.NoPermMsg"))));
             }
         }
         return true;

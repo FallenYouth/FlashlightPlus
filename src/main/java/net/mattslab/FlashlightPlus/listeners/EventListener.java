@@ -11,7 +11,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffectType;
 
 /**
- * Made by FallenYouth
+ * Made by Matt
  */
 
 public class EventListener implements Listener {
@@ -47,6 +47,6 @@ public class EventListener implements Listener {
                 (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
             event.setCancelled(true);
         }
-        
+
     }
 }

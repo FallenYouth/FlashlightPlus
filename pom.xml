@@ -6,7 +6,7 @@
 
     <groupId>com.fallenyouth</groupId>
     <artifactId>FlashlightPlus</artifactId>
-    <version>1.0.10</version>
+    <version>1.0.11</version>
     <name>FlashlightPlus-${project.version}</name>
     <repositories>
         <repository>
@@ -74,7 +74,7 @@
                     <relocations>
                         <relocation>
                             <pattern>org.mcstats</pattern>
-                            <shadedPattern>com.fallenyouth.FlashlightPlus</shadedPattern>
+                            <shadedPattern>net.mattslab.FlashlightPlus</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>

@@ -43,11 +43,12 @@ public class FlashlightPlus extends JavaPlugin {
         plugin = this;
         loadConfig();
         getLogger().info("Please report any issues with this plugin to:");
-        getLogger().info("https://github.com/FallenYouth/FlashlightPlus/issues/new");
+        getLogger().info("https://github.com/MattsLab/FlashlightPlus/issues/new");
 
         getServer().getPluginManager().registerEvents(new EventListener(), this);
         getServer().getPluginManager().registerEvents(new SignListener(), this);
         getCommand("flashlight").setExecutor(new CommandExecute());
+        getCommand("fl").setExecutor(new CommandExecute());
 
         if (getConfig().getBoolean("Backend.Metrics", true)) {
             try {
