@@ -1,4 +1,4 @@
-FlashlightPlus:
+FlashlightPlus
 ==============
 [![Build Status](https://travis-ci.org/MattsLab/FlashlightPlus.svg?branch=v1.0.10)](https://travis-ci.org/MattsLab/FlashlightPlus)
 
@@ -17,6 +17,9 @@ But first there are a few things you must follow when making a pull request.
 * FlashlightPlus is a flashlight plugin, keep it to the theme of the plugin
 * Make sure that your code works (Compile it and run it)
 
-License
-==============
+###License
 FlashlightPlus is licensed under the [MIT License](http://opensource.org/licenses/MIT). Feel free to contribute to the project.
+
+Various Statistics
+==============
+![mcstats](http://i.mcstats.org/FlashlightPlus/Global+Statistics.borderless.png "Player/Server")
