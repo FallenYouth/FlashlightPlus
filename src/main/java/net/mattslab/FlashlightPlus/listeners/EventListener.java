@@ -2,12 +2,15 @@ package net.mattslab.FlashlightPlus.listeners;
 
 import net.mattslab.FlashlightPlus.FlashlightPlus;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 /**
@@ -48,5 +51,20 @@ public class EventListener implements Listener {
             event.setCancelled(true);
         }
 
+    }
+
+    @EventHandler
+    public void onDrinkMilk(PlayerItemConsumeEvent event) {
+        Player player = event.getPlayer();
+        ItemStack milk = new ItemStack(event.getItem());
+        if (milk.getType().equals(Material.MILK_BUCKET) && FlashlightPlus.getFlashLightToggle().contains(player.getName())) {
+            event.setCancelled(true);
+            for (PotionEffect effect : player.getActivePotionEffects()) {
+                if (!(player.getActivePotionEffects() == PotionEffectType.NIGHT_VISION)) {
+                    player.removePotionEffect(effect.getType());
+                }
+            }
+            player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
+        }
     }
 }

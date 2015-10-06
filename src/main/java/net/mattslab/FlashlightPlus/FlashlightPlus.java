@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * Made by FallenYouth
+ * Made by Matt
  * This plugin is using the ItemBuilder class made by CraftThatBlock.
  */
 
