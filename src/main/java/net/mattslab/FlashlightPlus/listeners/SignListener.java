@@ -1,6 +1,6 @@
 package net.mattslab.FlashlightPlus.listeners;
 
-import net.mattslab.FlashlightPlus.FlashlightPlus;
+import net.mattslab.FlashlightPlus.api.API;
 import org.bukkit.ChatColor;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
@@ -22,12 +22,12 @@ public class SignListener implements Listener {
 
         if (player.hasPermission("flashlight.admin.sign")) {
             if (event.getLine(0).equals("[Flashlight]")) {
-                player.sendMessage(FlashlightPlus.getMessage(ChatColor.GREEN + "sign created!"));
+                API.say(player, ChatColor.GREEN + "sign created!");
 
-                event.setLine(0, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line1")));
-                event.setLine(1, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line2")));
-                event.setLine(2, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line3")));
-                event.setLine(3, ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line4")));
+                event.setLine(0, ChatColor.translateAlternateColorCodes('&', API.getInstance().getConfig().getString("Sign.Line1")));
+                event.setLine(1, ChatColor.translateAlternateColorCodes('&', API.getInstance().getConfig().getString("Sign.Line2")));
+                event.setLine(2, ChatColor.translateAlternateColorCodes('&', API.getInstance().getConfig().getString("Sign.Line3")));
+                event.setLine(3, ChatColor.translateAlternateColorCodes('&', API.getInstance().getConfig().getString("Sign.Line4")));
             }
         }
     }
@@ -39,8 +39,8 @@ public class SignListener implements Listener {
                 Sign sign = (Sign) event.getClickedBlock().getState();
                 Player player = event.getPlayer();
 
-                if (sign.getLine(0).equals(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Sign.Line1")))) {
-                    FlashlightPlus.togglePlayer(player);
+                if (sign.getLine(0).equals(ChatColor.translateAlternateColorCodes('&', API.getInstance().getConfig().getString("Sign.Line1")))) {
+                    API.togglePlayer(player);
                 }
             }
         }

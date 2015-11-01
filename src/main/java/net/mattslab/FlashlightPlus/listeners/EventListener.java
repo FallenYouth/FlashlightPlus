@@ -1,9 +1,8 @@
 package net.mattslab.FlashlightPlus.listeners;
 
-import net.mattslab.FlashlightPlus.FlashlightPlus;
+import net.mattslab.FlashlightPlus.api.API;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -20,10 +19,10 @@ import org.bukkit.potion.PotionEffectType;
 public class EventListener implements Listener {
     @EventHandler
     public void onLeave(PlayerQuitEvent e) {
-        Player player = (Player) e.getPlayer();
+        Player player = e.getPlayer();
 
-        if (FlashlightPlus.getFlashLightToggle().contains(player.getName())) {
-            FlashlightPlus.getFlashLightToggle().remove(player.getName());
+        if (API.getFlashLightToggle().contains(player.getName())) {
+            API.getFlashLightToggle().remove(player.getName());
             e.getPlayer().removePotionEffect(PotionEffectType.NIGHT_VISION);
         }
     }
@@ -36,7 +35,7 @@ public class EventListener implements Listener {
                 (torch.hasItemMeta()) &&
                 (torch.getItemMeta().getDisplayName() != null) &&
                 (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
-            FlashlightPlus.togglePlayer(player);
+            API.togglePlayer(player);
         }
     }
 
@@ -54,17 +53,17 @@ public class EventListener implements Listener {
     }
 
     @EventHandler
-    public void onDrinkMilk(PlayerItemConsumeEvent event) {
+    public void onConsumeMilk(PlayerItemConsumeEvent event) {
         Player player = event.getPlayer();
         ItemStack milk = new ItemStack(event.getItem());
-        if (milk.getType().equals(Material.MILK_BUCKET) && FlashlightPlus.getFlashLightToggle().contains(player.getName())) {
+        if (milk.getType().equals(Material.MILK_BUCKET) && API.getFlashLightToggle().contains(player.getName())) {
             event.setCancelled(true);
             for (PotionEffect effect : player.getActivePotionEffects()) {
                 if (!(player.getActivePotionEffects() == PotionEffectType.NIGHT_VISION)) {
                     player.removePotionEffect(effect.getType());
                 }
             }
-            player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true));
+            player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, Integer.MAX_VALUE, 0, true, false));
         }
     }
 }

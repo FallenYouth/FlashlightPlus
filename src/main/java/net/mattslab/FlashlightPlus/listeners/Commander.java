@@ -1,6 +1,7 @@
 package net.mattslab.FlashlightPlus.listeners;
 
 import net.mattslab.FlashlightPlus.FlashlightPlus;
+import net.mattslab.FlashlightPlus.api.API;
 import net.mattslab.FlashlightPlus.utils.ItemBuilder;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -14,18 +15,24 @@ import org.bukkit.inventory.ItemStack;
  * Made by Matt
  */
 
-public class CommandExecute implements CommandExecutor {
+public class Commander implements CommandExecutor {
+
+    public Commander() {
+        FlashlightPlus plugin = API.getInstance();
+        plugin.getCommand("fl").setExecutor(this);
+        plugin.getCommand("flashlight").setExecutor(this);
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (!(sender instanceof Player)) {
-            sender.sendMessage(FlashlightPlus.getMessage("You must be a player to use this command."));
+            API.say(sender, "You must be a player to use this command.");
             return true;
         }
         Player player = (Player) sender;
         if (cmd.getName().equalsIgnoreCase("flashlight") || cmd.getName().equalsIgnoreCase("fl") && (player.hasPermission("flashlight.toggle"))) {
             if (args.length != 1) {
-                FlashlightPlus.togglePlayer(player);
+                API.togglePlayer(player);
             }
         }
         if (args.length == 1) {
@@ -35,10 +42,13 @@ public class CommandExecute implements CommandExecutor {
                 player.sendMessage(ChatColor.GREEN + "/flashlight - Toggles flashlight on/off");
                 player.sendMessage(ChatColor.DARK_RED + "Sub-Commands:");
                 player.sendMessage(ChatColor.DARK_PURPLE + "/flashlight <sub-command>");
-                player.sendMessage(ChatColor.GREEN + "spawn - Spawns Flashlight Torch");
                 player.sendMessage(ChatColor.GREEN + "help - Displays the flashlight menu");
-                player.sendMessage(ChatColor.DARK_RED + "Admin Commands:");
-                player.sendMessage(ChatColor.GREEN + "reload - Reloads the config");
+                if (player.hasPermission("flashlight.spawn")) {
+                    player.sendMessage(ChatColor.GREEN + "spawn - Spawns Flashlight Torch");
+                } else if (player.hasPermission("flashlight.admin.reload")) {
+                    player.sendMessage(ChatColor.DARK_RED + "Admin Commands:");
+                    player.sendMessage(ChatColor.GREEN + "reload - Reloads the config");
+                }
                 player.sendMessage(ChatColor.GOLD.toString() + ChatColor.STRIKETHROUGH + "-----------------------------");
             } else if (args[0].equalsIgnoreCase("spawn") && player.hasPermission("flashlight.spawn")) {
                 ItemStack flashlight = new ItemBuilder(Material.TORCH)
@@ -49,14 +59,13 @@ public class CommandExecute implements CommandExecutor {
                 if (!player.getInventory().containsAtLeast(flashlight, 1)) {
                     player.getInventory().addItem(flashlight);
                 } else {
-                    player.sendMessage(FlashlightPlus.getMessage(ChatColor.RED + "You already have a flashlight in your inventory!"));
+                    API.say(player, ChatColor.RED + "You already have a flashlight in your inventory!");
                 }
-
             } else if (args[0].equalsIgnoreCase("reload") && player.hasPermission("flashlight.admin.reload")) {
-                FlashlightPlus.getPlugin().reloadConfig();
-                sender.sendMessage(FlashlightPlus.getMessage("&aConfiguration file reloaded."));
+                API.getInstance().reloadConfig();
+                API.say(sender, "&aConfiguration file reloaded.");
             } else {
-                player.sendMessage(FlashlightPlus.getMessage(ChatColor.translateAlternateColorCodes('&', FlashlightPlus.getPlugin().getConfig().getString("Messages.NoPermMsg"))));
+                API.say(player, ChatColor.translateAlternateColorCodes('&', API.getInstance().getConfig().getString("Messages.NoPermMsg")));
             }
         }
         return true;

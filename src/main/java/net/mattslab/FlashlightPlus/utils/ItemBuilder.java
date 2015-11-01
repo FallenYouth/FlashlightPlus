@@ -31,11 +31,11 @@ import java.util.List;
  */
 @Data
 public class ItemBuilder {
-    private Material material;
+    private final Material material;
     private int amount = 1;
     private String name;
-    private List<String> lores = new ArrayList<String>();
-    private List<Enchant> enchantments = new ArrayList<Enchant>();
+    private final List<String> lores = new ArrayList<String>();
+    private final List<Enchant> enchantments = new ArrayList<Enchant>();
     private short durability = -101;
     private MaterialData data;
     private Potion potion;
@@ -175,7 +175,7 @@ public class ItemBuilder {
         item.setAmount(amount);
 
         ItemMeta meta = item.getItemMeta();
-        if (name != null && name != "") {
+        if (name != null && !name.equals("")) {
             meta.setDisplayName(name);
         }
         if (!lores.isEmpty()) {
@@ -202,7 +202,7 @@ public class ItemBuilder {
     }
 
     @Data
-    public class Enchant {
+    private class Enchant {
         final private Enchantment enchantment;
         final private int level;
         final private boolean glow;
