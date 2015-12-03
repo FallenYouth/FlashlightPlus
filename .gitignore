@@ -1,6 +1,8 @@
 /FlashlightPlus.iml
 # Created by .ignore support plugin (hsz.mobi)
+/projectFilesBackup
 
-.idea
 target
 dependency-reduced-pom.xml
+/.idea
+.DS_Store

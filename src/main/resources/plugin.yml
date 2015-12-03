@@ -20,6 +20,9 @@ permissions:
   flashlight.spawn:
     description: Spawns in Flashlight torch
     default: op
+  flashlight.spawn.others:
+    description: Spawns a flashlight to others
+    default: op
   flashlight.bypasscooldown:
     description: Allow bypass of the cool down
     default: op

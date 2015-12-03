@@ -39,7 +39,7 @@ public class API {
     }
 
     public static void say(Player player, String msg) {
-        player.sendMessage(getPrefix() + ChatColor.translateAlternateColorCodes('&', msg));
+        player.sendMessage(ChatColor.translateAlternateColorCodes('&', getPrefix() + msg));
     }
 
     public static void say(CommandSender player, String msg) {
@@ -134,5 +134,6 @@ public class API {
     private static boolean isInCooldown(Player player) {
         return cooldown.containsKey(player.getUniqueId());
     }
+
 
 }
