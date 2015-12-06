@@ -42,6 +42,7 @@ public class FlashlightPlus extends JavaPlugin {
         }
 
 
+
         Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
             @Override
             public void run() {
