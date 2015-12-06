@@ -6,7 +6,9 @@ import net.mattslab.FlashlightPlus.listeners.EventListener;
 import net.mattslab.FlashlightPlus.listeners.SignListener;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.mcstats.Metrics;
 
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -28,6 +30,16 @@ public class FlashlightPlus extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new EventListener(), this);
         getServer().getPluginManager().registerEvents(new SignListener(), this);
+
+        if (getConfig().getBoolean("Backend.Metrics", true)) {
+            try {
+                Metrics metrics = new Metrics(this);
+                metrics.start();
+                getLogger().info("Metrics Started");
+            } catch (IOException e) {
+                getLogger().warning("Failed to submit stats");
+            }
+        }
 
         Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
             @Override
