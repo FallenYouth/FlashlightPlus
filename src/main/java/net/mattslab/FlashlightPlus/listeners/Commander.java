@@ -57,7 +57,6 @@ public class Commander implements CommandExecutor {
                             .withAmount(1)
                             .toItemStack();
                     if (args.length == 1) {
-
                         if (!player.getInventory().containsAtLeast(flashlight, 1)) {
                             player.getInventory().addItem(flashlight);
                         } else if (player.getInventory().containsAtLeast(flashlight, 1)) {
@@ -65,9 +64,13 @@ public class Commander implements CommandExecutor {
                         }
                     } else if (args.length == 2 && player.hasPermission("flashlight.spawn.others")) {
                         Player target = player.getServer().getPlayer(args[1]);
-                        if (player.getServer().getPlayer(args[0]) != null) {
+                        if (player.getServer().getPlayer(args[1]) != null) {
                             if (!target.getInventory().containsAtLeast(flashlight, 1)) {
                                 target.getInventory().addItem(flashlight);
+                                say(player, ChatColor.GREEN + "Gave Flashlight to " + ChatColor.AQUA + target.getName());
+                                say(target, ChatColor.GREEN + "You just received a flashlight!");
+                            } else if (player.getInventory().containsAtLeast(flashlight, 1)) {
+                                say(player, ChatColor.RED + "Target already has a flashlight in their inventory!");
                             }
                         }
                     }
