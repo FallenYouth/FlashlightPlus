@@ -2,6 +2,7 @@ package net.mattslab.FlashlightPlus.api;
 
 import lombok.Getter;
 import net.mattslab.FlashlightPlus.FlashlightPlus;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
 import org.bukkit.command.CommandSender;
@@ -50,50 +51,6 @@ public class API {
         return getInstance().getConfig().getString("Messages.Prefix");
     }
 
-    public static void loadConfig() {
-        int version = 2;
-
-        File file = new File(getInstance().getDataFolder() + File.separator + "config.yml");
-
-        if (!file.exists()) {
-            getInstance().saveDefaultConfig();
-        } else {
-            FileConfiguration config = YamlConfiguration.loadConfiguration(file);
-            if (config.contains("Version") || config.getInt("Version", version) == version) {
-                file.delete();
-                File tempfile = new File(getInstance().getDataFolder() + File.separator + "oldconfig.yml");
-                try {
-                    config.save(tempfile);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    getInstance().getLogger().warning("FlashlightPlus has encountered a problem, report the issue @");
-                    getInstance().getLogger().warning("https://github.com/MattsLab/FlashlightPlus/issues/new");
-                }
-                updateConfig();
-                getInstance().getLogger().info("Configuration File updated!");
-            }
-        }
-    }
-
-    private static void updateConfig() {
-        File tempfile = new File(getInstance().getDataFolder() + File.separator + "oldconfig.yml");
-
-        FileConfiguration oldC = YamlConfiguration.loadConfiguration(tempfile);
-        getInstance().saveDefaultConfig();
-        getInstance().getConfig().set("Messages.Prefix", oldC.getString("Messages.Prefix"));
-        getInstance().getConfig().set("Messages.FlashlightOnMsg", oldC.getString("Messages.FlashlightOnMsg"));
-        getInstance().getConfig().set("Messages.FlashlightOffMsg", oldC.getString("Messages.FlashlightOffMsg"));
-        getInstance().getConfig().set("Messages.NoPermMsg", oldC.getStringList("Messages.NoPermMsg"));
-        getInstance().getConfig().set("Messages.CooldownMsg", oldC.getString("Messages.CooldownMsg"));
-        getInstance().getConfig().set("Sign.Line1", oldC.getString("Sign.Line1"));
-        getInstance().getConfig().set("Sign.Line2", oldC.getString("Sign.Line2"));
-        getInstance().getConfig().set("Sign.Line3", oldC.getString("Sign.Line3"));
-        getInstance().getConfig().set("Sign.Line4", oldC.getString("Sign.Line4"));
-        getInstance().getConfig().set("Backend.Cooldown", oldC.getInt("Backend.Cooldown"));
-        getInstance().getConfig().set("Backend.Metrics", oldC.getBoolean("Backend.Metrics"));
-        getInstance().saveConfig();
-    }
-
     public static void togglePlayer(Player player) {
         if (player.hasPermission("flashlight.use.torch")) {
             if (!getFlashLightToggle().contains(player.getName())) {
@@ -133,6 +90,14 @@ public class API {
 
     private static boolean isInCooldown(Player player) {
         return cooldown.containsKey(player.getUniqueId());
+    }
+
+    public static void checkConfig() {
+        if (getInstance().getConfig().getInt("Version") != 2) {
+            getInstance().getLogger().warning("Outdated Config");
+            getInstance().getLogger().warning("Please reset your config!");
+            Bukkit.getPluginManager().disablePlugin(getInstance());
+        }
     }
 
 

@@ -13,6 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import static net.mattslab.FlashlightPlus.api.API.checkConfig;
+
 /**
  * Made by Matt
  * This plugin is using the ItemBuilder class made by CraftThatBlock.
@@ -24,7 +26,10 @@ public class FlashlightPlus extends JavaPlugin {
         new API(this);
         new Commander();
 
-        API.loadConfig();
+        getConfig().options().copyDefaults(true);
+        this.saveConfig();
+        checkConfig();
+
         getLogger().info("Please report any issues with this plugin to:");
         getLogger().info("https://github.com/MattsLab/FlashlightPlus/issues/new");
 
