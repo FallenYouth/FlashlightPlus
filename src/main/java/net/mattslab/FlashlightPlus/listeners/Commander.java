@@ -33,7 +33,7 @@ public class Commander implements CommandExecutor {
         }
         Player player = (Player) sender;
         if (cmd.getName().equalsIgnoreCase("flashlight") || cmd.getName().equalsIgnoreCase("fl") && (player.hasPermission("flashlight.toggle"))) {
-            if (args[0].equals("")) {
+            if (args.length != 1) {
                 API.togglePlayer(player);
             } else {
                 API.say(player, ChatColor.RED + "You do not have permission to use this command!");
