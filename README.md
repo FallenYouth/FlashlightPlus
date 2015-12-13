@@ -18,7 +18,7 @@ But first there are a few things you must follow when making a pull request.
 * Make sure that your code works (Compile it and run it)
 
 ###License
-FlashlightPlus is licensed under the [MIT License](http://opensource.org/licenses/MIT). Feel free to contribute to the project.
+FlashlightPlus is licensed under the [GNUv3](https://github.com/MattsLab/FlashlightPlus/blob/master/LICENSE).
 
 Various Statistics
 ==============
