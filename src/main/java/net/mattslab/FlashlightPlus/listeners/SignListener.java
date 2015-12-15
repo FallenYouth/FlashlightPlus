@@ -10,6 +10,8 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
+import static net.mattslab.FlashlightPlus.api.API.*;
+
 /**
  * Made by Matt
  */
@@ -22,12 +24,12 @@ public class SignListener implements Listener {
 
         if (player.hasPermission("flashlight.admin.sign")) {
             if (event.getLine(0).equals("[Flashlight]")) {
-                API.say(player, ChatColor.GREEN + "sign created!");
+                say(player, ChatColor.GREEN + "sign created!");
 
-                event.setLine(0, ChatColor.translateAlternateColorCodes('&', API.getInstance().getConfig().getString("Sign.Line1")));
-                event.setLine(1, ChatColor.translateAlternateColorCodes('&', API.getInstance().getConfig().getString("Sign.Line2")));
-                event.setLine(2, ChatColor.translateAlternateColorCodes('&', API.getInstance().getConfig().getString("Sign.Line3")));
-                event.setLine(3, ChatColor.translateAlternateColorCodes('&', API.getInstance().getConfig().getString("Sign.Line4")));
+                event.setLine(0, ChatColor.translateAlternateColorCodes('&', getInstance().getConfig().getString("Sign.Line1")));
+                event.setLine(1, ChatColor.translateAlternateColorCodes('&', getInstance().getConfig().getString("Sign.Line2")));
+                event.setLine(2, ChatColor.translateAlternateColorCodes('&', getInstance().getConfig().getString("Sign.Line3")));
+                event.setLine(3, ChatColor.translateAlternateColorCodes('&', getInstance().getConfig().getString("Sign.Line4")));
             }
         }
     }
@@ -39,8 +41,8 @@ public class SignListener implements Listener {
                 Sign sign = (Sign) event.getClickedBlock().getState();
                 Player player = event.getPlayer();
 
-                if (sign.getLine(0).equals(ChatColor.translateAlternateColorCodes('&', API.getInstance().getConfig().getString("Sign.Line1")))) {
-                    API.togglePlayer(player);
+                if (sign.getLine(0).equals(ChatColor.translateAlternateColorCodes('&', getInstance().getConfig().getString("Sign.Line1")))) {
+                    togglePlayer(player);
                 }
             }
         }

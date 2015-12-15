@@ -12,6 +12,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import static net.mattslab.FlashlightPlus.api.API.*;
+
 /**
  * Made by Matt
  */
@@ -21,8 +23,8 @@ public class EventListener implements Listener {
     public void onLeave(PlayerQuitEvent e) {
         Player player = e.getPlayer();
 
-        if (API.getFlashLightToggle().contains(player.getName())) {
-            API.getFlashLightToggle().remove(player.getName());
+        if (getFlashLightToggle().contains(player.getName())) {
+            getFlashLightToggle().remove(player.getName());
             e.getPlayer().removePotionEffect(PotionEffectType.NIGHT_VISION);
         }
     }
@@ -35,7 +37,7 @@ public class EventListener implements Listener {
                 (torch.hasItemMeta()) &&
                 (torch.getItemMeta().getDisplayName() != null) &&
                 (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
-            API.togglePlayer(player);
+            togglePlayer(player);
         }
     }
 
@@ -56,7 +58,7 @@ public class EventListener implements Listener {
     public void onConsumeMilk(PlayerItemConsumeEvent event) {
         Player player = event.getPlayer();
         ItemStack milk = new ItemStack(event.getItem());
-        if (milk.getType().equals(Material.MILK_BUCKET) && API.getFlashLightToggle().contains(player.getName())) {
+        if (milk.getType().equals(Material.MILK_BUCKET) && getFlashLightToggle().contains(player.getName())) {
             event.setCancelled(true);
             for (PotionEffect effect : player.getActivePotionEffects()) {
                 if (!(player.getActivePotionEffects() == PotionEffectType.NIGHT_VISION)) {

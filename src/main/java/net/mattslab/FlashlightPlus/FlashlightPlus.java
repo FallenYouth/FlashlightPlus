@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+import static net.mattslab.FlashlightPlus.api.API.*;
 import static net.mattslab.FlashlightPlus.api.API.checkConfig;
 
 /**
@@ -37,11 +38,11 @@ public class FlashlightPlus extends JavaPlugin {
         Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
             @Override
             public void run() {
-                for (Object o : ((HashMap) API.cooldown.clone()).entrySet()) {
+                for (Object o : ((HashMap) cooldown.clone()).entrySet()) {
                     Map.Entry pairs = (Map.Entry) o;
-                    API.cooldown.remove(pairs.getKey());
+                    cooldown.remove(pairs.getKey());
                     if (((Integer) pairs.getValue()) > 0) {
-                        API.cooldown.put((UUID) pairs.getKey(), ((Integer) pairs.getValue()) - 1);
+                        cooldown.put((UUID) pairs.getKey(), ((Integer) pairs.getValue()) - 1);
                     }
                 }
             }

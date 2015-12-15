@@ -29,7 +29,7 @@ public class API {
     @Getter
     public static final HashMap<UUID, Integer> cooldown = new HashMap<UUID, Integer>();
 
-    private  static FlashlightPlus flashlightPlus;
+    private static FlashlightPlus flashlightPlus;
 
     public API(FlashlightPlus plugin) {
         flashlightPlus = plugin;

@@ -19,7 +19,3 @@ But first there are a few things you must follow when making a pull request.
 
 ###License
 FlashlightPlus is licensed under the [GNUv3](https://github.com/MattsLab/FlashlightPlus/blob/master/LICENSE).
-
-Various Statistics
-==============
-![mcstats](http://i.mcstats.org/FlashlightPlus/Global+Statistics.borderless.png "Player/Server")
