@@ -13,8 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import static net.mattslab.FlashlightPlus.api.API.getFlashLightToggle;
-import static net.mattslab.FlashlightPlus.api.API.togglePlayer;
+import static net.mattslab.FlashlightPlus.api.API.*;
 
 /**
  * Made by Matt

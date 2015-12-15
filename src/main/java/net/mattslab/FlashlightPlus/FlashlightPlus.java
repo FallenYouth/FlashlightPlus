@@ -11,8 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import static net.mattslab.FlashlightPlus.api.API.checkConfig;
-import static net.mattslab.FlashlightPlus.api.API.cooldown;
+import static net.mattslab.FlashlightPlus.api.API.*;
 
 /**
  * Made by Matt
