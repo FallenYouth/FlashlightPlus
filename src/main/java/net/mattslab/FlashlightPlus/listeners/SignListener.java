@@ -1,6 +1,5 @@
 package net.mattslab.FlashlightPlus.listeners;
 
-import net.mattslab.FlashlightPlus.api.API;
 import org.bukkit.ChatColor;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;

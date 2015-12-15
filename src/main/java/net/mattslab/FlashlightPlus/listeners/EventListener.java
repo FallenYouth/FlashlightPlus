@@ -1,18 +1,20 @@
 package net.mattslab.FlashlightPlus.listeners;
 
-import net.mattslab.FlashlightPlus.api.API;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.player.*;
+import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerItemConsumeEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import static net.mattslab.FlashlightPlus.api.API.*;
+import static net.mattslab.FlashlightPlus.api.API.getFlashLightToggle;
+import static net.mattslab.FlashlightPlus.api.API.togglePlayer;
 
 /**
  * Made by Matt

@@ -11,8 +11,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import static net.mattslab.FlashlightPlus.api.API.*;
 import static net.mattslab.FlashlightPlus.api.API.checkConfig;
+import static net.mattslab.FlashlightPlus.api.API.cooldown;
 
 /**
  * Made by Matt
@@ -31,6 +31,8 @@ public class FlashlightPlus extends JavaPlugin {
 
         getLogger().info("Please report any issues with this plugin to:");
         getLogger().info("https://github.com/MattsLab/FlashlightPlus/issues/new");
+
+        getLogger().info("Keep up with the latest builds of this plugin @ ci.mattslab.net/job/FlashlightPlus/");
 
         getServer().getPluginManager().registerEvents(new EventListener(), this);
         getServer().getPluginManager().registerEvents(new SignListener(), this);
