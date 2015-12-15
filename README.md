@@ -1,6 +1,6 @@
 FlashlightPlus
 ==============
-[![Build Status](https://travis-ci.org/MattsLab/FlashlightPlus.svg?branch=v1.0.10)](https://travis-ci.org/MattsLab/FlashlightPlus)
+[![Build Status](http://ci.mattslab.net/job/FlashlightPlus/badge/icon)](http://ci.mattslab.net/job/FlashlightPlus/)
 
 FlashlightPlus is a Minecraft plugin that enabled the player to cast a night vision effect on themselves creating a brighter world for caving and nightly duties.
 
