@@ -13,13 +13,15 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import static net.mattslab.FlashlightPlus.api.API.*;
+import static net.mattslab.FlashlightPlus.api.API.getFlashLightToggle;
+import static net.mattslab.FlashlightPlus.api.API.togglePlayer;
 
 /**
  * Made by Matt
  */
 
 public class EventListener implements Listener {
+
     @EventHandler
     public void onLeave(PlayerQuitEvent e) {
         Player player = e.getPlayer();

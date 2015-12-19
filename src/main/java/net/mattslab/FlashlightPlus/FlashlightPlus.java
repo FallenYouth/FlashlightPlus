@@ -5,20 +5,22 @@ import net.mattslab.FlashlightPlus.listeners.Commander;
 import net.mattslab.FlashlightPlus.listeners.EventListener;
 import net.mattslab.FlashlightPlus.listeners.SignListener;
 import org.bukkit.Bukkit;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import static net.mattslab.FlashlightPlus.api.API.*;
+import static net.mattslab.FlashlightPlus.api.API.checkConfig;
+import static net.mattslab.FlashlightPlus.api.API.cooldown;
 
 /**
  * Made by Matt
  * This plugin is using the ItemBuilder class made by CraftThatBlock.
  */
 
-public class FlashlightPlus extends JavaPlugin {
+public class FlashlightPlus extends JavaPlugin implements Listener {
 
     public void onEnable() {
         new API(this);
