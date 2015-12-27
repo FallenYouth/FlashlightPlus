@@ -7,7 +7,13 @@
     <groupId>net.mattslab</groupId>
     <artifactId>FlashlightPlus</artifactId>
     <version>1.0.14</version>
-    <name>FlashlightPlus-${project.version}</name>
+
+    <scm>
+        <url>https://github.com/MattsLab/FlashlightPlus</url>
+        <connection>scm:git:git://github.com/MattsLab/FlashlightPlus.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:MattsLab/FlashlightPlus.git</developerConnection>
+    </scm>
+
     <repositories>
         <repository>
             <id>spigot-repo</id>
@@ -31,7 +37,7 @@
     </dependencies>
 
     <build>
-        <finalName>${project.name}</finalName>
+        <finalName>${project.artifactId}-${project.version}-r${buildNumber}</finalName>
         <defaultGoal>clean install</defaultGoal>
         <resources>
             <resource>
@@ -59,6 +65,23 @@
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <doCheck>true</doCheck>
+                    <doUpdate>true</doUpdate>
                 </configuration>
             </plugin>
         </plugins>

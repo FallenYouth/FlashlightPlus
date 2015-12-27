@@ -26,6 +26,7 @@ public class FlashlightPlus extends JavaPlugin implements Listener {
         new API(this);
         new Commander();
 
+        this.reloadConfig();
         getConfig().options().copyDefaults(true);
         this.saveConfig();
         checkConfig();
