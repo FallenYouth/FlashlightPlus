@@ -4,15 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.mattslab</groupId>
+    <groupId>net.mattslab.flashlightplus</groupId>
     <artifactId>FlashlightPlus</artifactId>
     <version>1.0.14</version>
-
-    <scm>
-        <url>https://github.com/MattsLab/FlashlightPlus</url>
-        <connection>scm:git:git://github.com/MattsLab/FlashlightPlus.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:MattsLab/FlashlightPlus.git</developerConnection>
-    </scm>
 
     <repositories>
         <repository>
@@ -37,7 +31,7 @@
     </dependencies>
 
     <build>
-        <finalName>${project.artifactId}-${project.version}-r${buildNumber}</finalName>
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <defaultGoal>clean install</defaultGoal>
         <resources>
             <resource>
@@ -65,23 +59,6 @@
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>buildnumber-maven-plugin</artifactId>
-                <version>1.4</version>
-                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>create</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <doCheck>true</doCheck>
-                    <doUpdate>true</doUpdate>
                 </configuration>
             </plugin>
         </plugins>
