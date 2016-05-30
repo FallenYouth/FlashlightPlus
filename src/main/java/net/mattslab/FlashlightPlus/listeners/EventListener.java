@@ -10,6 +10,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -34,23 +35,26 @@ public class EventListener implements Listener {
     @EventHandler
     public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
-        ItemStack torch = player.getItemInHand();
+        PlayerInventory playerInv = event.getPlayer().getInventory();
+        ItemStack torchMain = playerInv.getItemInMainHand();
+        ItemStack torchOff = playerInv.getItemInOffHand();
         if ((event.getAction() == Action.RIGHT_CLICK_AIR) &&
-                (torch.hasItemMeta()) &&
-                (torch.getItemMeta().getDisplayName() != null) &&
-                (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
+                (torchMain.hasItemMeta() || torchOff.hasItemMeta()) &&
+                (torchMain.getItemMeta().getDisplayName() != null) || (torchOff.getItemMeta().getDisplayName() != null) &&
+                (torchMain.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")) || torchOff.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")) {
             togglePlayer(player);
         }
     }
 
     @EventHandler
     public void onPlayerPlace(PlayerInteractEvent event) {
-        Player player = event.getPlayer();
-        ItemStack torch = player.getItemInHand();
+        PlayerInventory playerInv = event.getPlayer().getInventory();
+        ItemStack torchMain =  playerInv.getItemInMainHand();
+        ItemStack torchOff = playerInv.getItemInOffHand();
         if ((event.getAction() == Action.RIGHT_CLICK_BLOCK) &&
-                (torch.hasItemMeta()) &&
-                (torch.getItemMeta().getDisplayName() != null) &&
-                (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
+                (torchMain.hasItemMeta() || torchOff.hasItemMeta()) &&
+                (torchMain.getItemMeta().getDisplayName() != null) || (torchOff.getItemMeta().getDisplayName() != null) &&
+                (torchMain.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")) || torchOff.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")) {
             event.setCancelled(true);
         }
 
