@@ -19,7 +19,6 @@ import static net.mattslab.FlashlightPlus.api.API.*;
 public class Commander implements CommandExecutor {
 
     public Commander() {
-
         FlashlightPlus plugin = getInstance();
         plugin.getCommand("fl").setExecutor(this);
         plugin.getCommand("flashlight").setExecutor(this);
