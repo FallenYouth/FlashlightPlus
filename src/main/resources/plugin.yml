@@ -1,5 +1,5 @@
 name: FlashlightPlus
-author: FallenYouth # With the help of CraftThatBlock
+author: Vuut # With the help of CraftThatBlock
 version: ${project.version}
 main: net.mattslab.FlashlightPlus.FlashlightPlus
 description: Advanced Flashlight plugin for Minecraft

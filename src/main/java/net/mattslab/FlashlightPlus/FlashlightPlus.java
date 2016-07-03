@@ -34,20 +34,15 @@ public class FlashlightPlus extends JavaPlugin implements Listener {
         getLogger().info("Please report any issues with this plugin to:");
         getLogger().info("https://github.com/MattsLab/FlashlightPlus/issues/new");
 
-        getLogger().info("Keep up with the latest builds of this plugin @ ci.mattslab.net/job/FlashlightPlus/");
-
         getServer().getPluginManager().registerEvents(new EventListener(), this);
         getServer().getPluginManager().registerEvents(new SignListener(), this);
 
-        Bukkit.getScheduler().runTaskTimerAsynchronously(this, new Runnable() {
-            @Override
-            public void run() {
-                for (Object o : ((HashMap) cooldown.clone()).entrySet()) {
-                    Map.Entry pairs = (Map.Entry) o;
-                    cooldown.remove(pairs.getKey());
-                    if (((Integer) pairs.getValue()) > 0) {
-                        cooldown.put((UUID) pairs.getKey(), ((Integer) pairs.getValue()) - 1);
-                    }
+        Bukkit.getScheduler().runTaskTimerAsynchronously(this, () -> {
+            for (Object o : ((HashMap) cooldown.clone()).entrySet()) {
+                Map.Entry pairs = (Map.Entry) o;
+                cooldown.remove(pairs.getKey());
+                if (((Integer) pairs.getValue()) > 0) {
+                    cooldown.put((UUID) pairs.getKey(), ((Integer) pairs.getValue()) - 1);
                 }
             }
         }, 20, 20);

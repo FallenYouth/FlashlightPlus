@@ -96,5 +96,7 @@ public class API {
         }
     }
 
+    public static void getHand(Player player) {
 
+    }
 }
