@@ -37,23 +37,23 @@ public class EventListener implements Listener {
     public void onPlayerInteract(PlayerInteractEvent event) {
         Player player = event.getPlayer();
         PlayerInventory playerInv = event.getPlayer().getInventory();
-        ItemStack torchMain = playerInv.getItemInMainHand();
-        if ((event.getAction() == Action.LEFT_CLICK_AIR)) {
-            if (torchMain.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")) {
-                togglePlayer(player);
-            }
+        ItemStack torch = playerInv.getItemInMainHand();
+        if ((event.getAction() == Action.RIGHT_CLICK_AIR) &&
+                (torch.hasItemMeta()) &&
+                (torch.getItemMeta().getDisplayName() != null) &&
+                (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
+            togglePlayer(player);
         }
     }
-
 
     @EventHandler
     public void onPlayerPlace(PlayerInteractEvent event) {
         PlayerInventory playerInv = event.getPlayer().getInventory();
-        ItemStack torchMain = playerInv.getItemInMainHand();
+        ItemStack torch = playerInv.getItemInMainHand();
         if ((event.getAction() == Action.RIGHT_CLICK_BLOCK) &&
-                (torchMain.hasItemMeta()) &&
-                (torchMain.getItemMeta().getDisplayName() != null) &&
-                (torchMain.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
+                (torch.hasItemMeta()) &&
+                (torch.getItemMeta().getDisplayName() != null) &&
+                (torch.getItemMeta().getDisplayName().equals(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]"))) {
             event.setCancelled(true);
         }
 

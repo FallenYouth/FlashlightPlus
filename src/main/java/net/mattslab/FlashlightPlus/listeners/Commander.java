@@ -51,7 +51,7 @@ public class Commander implements CommandExecutor {
                 } else if (args[0].equalsIgnoreCase("spawn") && player.hasPermission("flashlight.spawn")) {
                     ItemStack flashlight = new ItemBuilder(Material.TORCH)
                             .withName(ChatColor.DARK_AQUA + "[" + ChatColor.WHITE + "Flashlight" + ChatColor.DARK_AQUA + "]")
-                            .withLores(ChatColor.RED + "Usage:", ChatColor.GREEN + "Left click for a night vision effect")
+                            .withLores(ChatColor.RED + "Usage:", ChatColor.GREEN + "Right click for a night vision effect")
                             .withAmount(1)
                             .toItemStack();
                     if (args.length == 1) {
